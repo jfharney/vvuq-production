@@ -1,0 +1,125 @@
+.unsel-combo{
+	color:#cfcfcf;
+	border: 1px solid black;
+	margin:2px;
+	padding:2px;
+}
+
+.unsel-combo:hover {
+	cursor:pointer;
+	color:#00b300;
+}
+
+.sel-combo{
+	color:#00b300;
+}
+
+.combo-box{
+	max-height:200px;
+	overflow-y:auto;
+}
+
+.input-group-addon{
+	background:#f2f2f2;
+}
+
+.staging-table>thead>tr>th,.staging-table>tbody>tr>td{
+	border:none;
+}
+
+.upload{
+	color:#00cd00;
+}
+
+.remove-icon{
+	color:#b30000;
+	padding:5px;
+}
+
+.remove-icon:hover {
+	background-color:#ffe7e7;
+	cursor:pointer;
+}
+
+.h1{
+	color:#808080;
+}
+
+.h2{
+	color:#808080;
+}
+
+.h3{
+	color:#808080;
+	padding:2px;
+	margin:2px;
+}
+
+.h5{
+	color:#808080;
+	padding:2px;
+	margin:2px;
+}
+
+.template{
+	margin:10px;
+}
+
+.template-padding{
+	padding:5px;
+}
+
+.drop-area{
+	height: 200px;
+	border: 2px dashed black;
+}
+
+.pane{
+	background-color:#f2f2f2;
+}
+
+.item{
+	color: black;
+}
+
+.area-group{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.area{
+	margin-bottom:20px;
+	margin-top:20px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #cccccc;
+	border-radius: 10px;
+}
+
+.navbar-default{
+	background-color: #cccccc;	
+	padding-right:15px;
+	font:cabin;
+}
+
+.navbar-default .navbar-header > a{
+	color:white;
+	font-size:20;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color:white;
+}
+
+.navbar-default .navbar-nav .active{
+	background-color:white;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	background:#d9d9d9;
+}
+
+.navbar-default .navbar-text,.navbar-default .navbar-text > a{
+	color:white;
+	cursor:pointer;
+}

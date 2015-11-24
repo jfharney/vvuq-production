@@ -1,0 +1,758 @@
+<div>
+
+<h1>E-Score Analysis</h1>
+
+<!-- 
+
+3.3       Test Case T3
+
+3.3.1    Objective
+
+The objective of this test case is to test requirement R3.
+ 
+R3:  Risk scores should aggregate across multiple user-specified criteria.
+ 
+Note:  “User-specified criteria” is a list of keywords the user selects or inputs to eScore. 
+3.3.2    Inputs
+
+Pubmed archive [8]
+            pubmedCentral_001.tgz
+pubmedCentral_01.tgz
+pubmedCentral_1.tgz
+pubmedCentral.tgz
+Keyword file:  keywords_pubmed.txt (Rall)
+3.3.3    Procedure
+
+ 
+3.3.3.1 Test:   Identify (from the file keywords_pubmed.txt) a set of keywords, ki, i=1, …, j, where j is the number of keywords
+                        Determine the risk scores using m<j keywords -> Rm
+                        Determine the risk scores using the remaining j-m keywords -> Rr
+                        Determine the risk scores using all j keywords -> Rall
+ 
+3.3.3.2 AN:      Combine Rm and Rr, and determine the following:
+                                    Number of entities in combined set -> nRmr
+                                    Number of unique entities in combined set -> nuRall
+                                    Number of entities in Rall -> nRall
+                                    Number of unique entities in Rall -> nuRall
+ 
+                                    Compare the risk scores for entities common to all results.
+3.3.4    Expected Outcome
+
+Test:    Test criteria individually and together.  The size of the result of using the keywords together should be smaller than that of the individual ones summed (assumes some redundancy in the results), i.e.,
+ 
+Rall ≤ Rm + Rr
+3.3.5    Other
+
+3.3.5.1 Environmental needs:  n.a.
+
+3.3.5.2 Special procedural requirements:  n.a.
+
+3.3.5.3 Intercase dependencies:  none​
+
+
+ -->
+
+<div class="panel panel-default template"> 
+	<div class="row template">
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 3</div>
+		</div>
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h4>Test 3 - Test criteria individually and together.  The size of the result of using the keywords together should be smaller than that of the individual ones summed (assumes some redundancy in the results), i.e.,
+					Rall ≤ Rm + Rr
+					</h4>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<div class="col-xs-6">
+						
+						
+						<label ng-repeat="keyword in keywords">
+						  <input
+						    type="checkbox"
+						    name="selectedKeywords[]"
+						    value="{{keyword}}"
+						    ng-checked="selection.indexOf(keyword) > -1"
+						    ng-click="toggleSelection(keyword)"
+						  > {{keyword}} 
+						</label>
+						
+					</div>
+				</div>
+				<div class="row">
+					<button class="btn btn-default" ng-click="test3()">
+							Run Test 3
+					</button>
+				</div>
+				
+				<div class="row" style="margin-top:10px;">
+					<div class="col-md-4">
+						<div><strong>R_all</strong></div>
+						<div><strong></strong></div>
+					</div>
+					<div class="col-md-4">
+						<div><strong>R_selected</strong></div>
+						<div ng-repeat="sel in selection">{{sel}}</div>
+					</div>
+					<div class="col-md-4">
+						<div><strong>R_unselected</strong></div>
+						<div ng-repeat="unsel in unselection">{{unsel}}</div>
+					</div>
+				</div>
+				
+				<div class="row" style="margin-top:10px;">
+				
+					<div class="col-md-4">
+					{{test3results.r_all}}
+					</div>
+					<div class="col-md-4">
+					{{test3results.r_selected}}
+					</div>
+					<div class="col-md-4">
+					{{test3results.r_unselected}}
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<div>Test 3 {{test3results.test3 ? 'Passed' : 'Failed'}}</div> 
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<!-- 
+
+3.4       Test Case T4
+
+3.4.1    Objective
+
+The objective of this test case is to test requirement R4.
+ 
+R4:  Allow user to differentially weight risk criteria.
+ 
+Note:  A risk criterion is a keyword.
+ 
+Note:  There are no stated bounds for a keyword weight.  There is no stated default for keyword weight; however, we assume the default is to weight all criteria equally.
+3.4.2    Inputs
+
+Pubmed archive [8]
+            pubmedCentral_001.tgz
+pubmedCentral_01.tgz
+pubmedCentral_1.tgz
+pubmedCentral.tgz
+3.4.3    Procedure
+
+ 
+3.4.3.1 OBS:    Observe that a user can provide weights for individual keywords.
+3.4.3.2 Test:  
+
+            1)  Run the end-to-end script with default weights and capture the results.
+            2)  Run the end-to-end script with user-defined weights and capture the results.
+3)         Compare results. Did the change in keyword weights impact the risk score?
+3.4.4    Expected Outcome
+
+ 
+3.4.4.1 OBS:    The user can provide a weight for an individual keyword.
+ 
+3.4.4.2 Test:   A large change in keyword weight will impact the entity/risk score tuple.  Without knowing the range of the weights, it is unknown a) what constitutes a “small” change, and b) if/how a small change in keyword weight will impact the resulting entity/risk score tuples. This code is not visible to the test team.  Suggest using metamorphic testing to explore this requirement further.
+3.4.5    Other
+
+3.4.5.1 Environmental needs:  n.a.
+
+3.4.5.2 Special procedural requirements:  n.a.
+
+3.4.5.3 Intercase dependencies:  none​
+
+
+ -->
+
+<div class="panel panel-default template"> 
+	<div class="row template" >
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 4</div>
+		</div>
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h4>Test 4 - 
+					</h4>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+
+<!-- 
+
+3.5.1    Objective
+
+The objective of this test case is to test requirement R5. (F2c)
+ 
+R5:  Risk scores should be deterministic.
+3.5.2    Inputs
+
+Pubmed archive [8]
+            pubmedCentral_001.tgz
+pubmedCentral_01.tgz
+pubmedCentral_1.tgz
+pubmedCentral.tgz
+3.5.3    Procedure
+
+3.5.3.1 Test
+
+1)  Run end-to-end scenario n≥100 times. Use a different random number seed for each run.
+2)  Save the risk score data (score and the entity to which the score belongs).
+3)  Determine the range of the resulting risk scores. If Rangei = 0, where i is the risk score of the ith entity, i = 1, … , number of entities, then the risk scores appear to be deterministic.
+4)  If Rangei ≠ 0, calculate statistics on Rangei including: minimum, maximum, mean, variance, and  RMSD (root mean squared distance) over the n runs.
+3.5.4    Expected Outcome
+
+ 
+3.5.4.1 Test    If the scores are deterministic, we expect Rangei = 0.
+7.5.2    Actual
+
+Test:    TBD
+3.5.5    Other
+
+3.5.5.1 Environmental needs:  n.a.
+
+3.5.5.2 Special procedural requirements:  n.a.
+
+3.5.5.3 Intercase dependencies:  none
+
+ -->
+<div class="panel panel-default template"> 
+	<div class="row template" >
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 5</div>
+		</div>
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h4>Test 5 -  Risk scores should be deterministic. 1)  Run end-to-end scenario n≥100 times. Use a different random number seed for each run.
+2)  Save the risk score data (score and the entity to which the score belongs).
+3)  Determine the range of the resulting risk scores. If Rangei = 0, where i is the risk score of the ith entity, i = 1, … , number of entities, then the risk scores appear to be deterministic.
+4)  If Rangei ≠ 0, calculate statistics on Rangei including: minimum, maximum, mean, variance, and  RMSD (root mean squared distance) over the n runs.
+					
+					</h4>
+				</div>
+				<div class="row"  style="margin-top:10px;">
+					<div class="col-xs-6">
+						
+						<label>
+					    	<input type="radio" ng-model="test5dataset.name" value="all">
+						    all
+						 </label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test5dataset.name" value="pubmedCentral_001">
+					    	pubmedCentral_001
+					  	</label><br/>
+					 	<label>
+					    	<input type="radio" ng-model="test5dataset.name" value="pubmedCentral_01">
+					    	pubmedCentral_01
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test5dataset.name" value="pubmedCentral_1">
+					    	pubmedCentral_1
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test5dataset.name" value="pubmedCentral">
+					    	pubmedCentral
+					  	</label><br/>
+					  	
+					  	<tt>dataset = {{test5dataset.name | json}}</tt><br/>
+  
+ 
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<button class="btn btn-default" ng-click="test5()">
+							Run Test 5
+					</button>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<div>Test 5 {{test5results.test5 ? 'Passed' : 'Failed'}}</div> 
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+3.20     Test Case T20
+
+3.20.1 Objective
+
+The objective of this test case is to test requirement R20.
+ 
+R20:  The time eScore takes to answer user queries should be as close to real-time as possible.
+3.20.2 Inputs
+
+Pubmed archive [8]
+            pubmedCentral_001.tgz
+pubmedCentral_01.tgz
+pubmedCentral_1.tgz
+pubmedCentral.tgz
+3.20.3  Procedure
+
+3.20.3.1           Test: 
+1)    Run the baseline end-to-end scenario on the selected input.
+2)    Retrieve the number of rows in the results.
+3)   Query the results and time from query entry to display of query results.
+3.20.4 Expected Outcome
+
+3.20.4.1           Test    The expected time to answer a user query is on the order of milliseconds (ms).  As the graph increases in size and complexity, the query-answer time increases.  Complete the table below.
+
+ 
+ 
+Table 3.20-1.  Test Case T20 Results
+ 
+Input File	No. Rows	Query Time (ms)
+pubmedCentral_001.tgz	 	 
+pubmedCentral_01.tgz	 	 
+pubmedCentral_1.tgz	 	 
+pubmedCentral.tgz	 	 
+ 
+ 
+22.5.2  Actual
+
+Test:    TBD
+3.20.5 Other
+
+3.20.5.1           Environmental needs:  n.a.
+
+3.20.5.2           Special procedural requirements:  n.a.
+
+3.20.5.3           Intercase dependencies:  none​
+
+
+ -->
+
+
+<div class="panel panel-default template"> 
+	<div class="row template" >
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 20</div>
+		</div>
+
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h4>Test 20 - The expected time to answer a user query is on the order of milliseconds (ms).  
+						As the graph increases in size and complexity, the query-answer time increases.
+					</h4>
+				</div>
+				<div class="row"  style="margin-top:10px;">
+					<div class="col-xs-6">
+						
+						<label>
+					    	<input type="radio" ng-model="test20dataset.name" value="all">
+						    all
+						 </label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test20dataset.name" value="pubmedCentral_001">
+					    	pubmedCentral_001
+					  	</label><br/>
+					 	<label>
+					    	<input type="radio" ng-model="test20dataset.name" value="pubmedCentral_01">
+					    	pubmedCentral_01
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test20dataset.name" value="pubmedCentral_1">
+					    	pubmedCentral_1
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test20dataset.name" value="pubmedCentral">
+					    	pubmedCentral
+					  	</label><br/>
+					  	
+					  	<tt>dataset = {{test20dataset.name | json}}</tt><br/>
+  
+ 
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<button class="btn btn-default" ng-click="test20()">
+							Run Test 20
+					</button>
+				</div>
+				<div class="row" style="margin-top:10px;" >
+				
+					<div class="col-md-3">
+						<strong>Input File</strong>
+					</div>
+					<div class="col-md-3">
+						<strong>Number of rows</strong>
+					</div>
+					<div class="col-md-3">
+						<strong>Total Time</strong>
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;" ng-repeat="result in test20results">
+				
+					<div class="col-md-3">
+					{{result.input_file}}
+					</div>
+					<div class="col-md-3">
+					{{result.numrows}}
+					</div>
+					<div class="col-md-3">
+					{{result.total_time}}
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<div>Test 20 {{test21results.test20 ? 'Passed' : 'Failed'}}</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+3.21     Test Case T21
+
+3.21.1 Objective
+
+The objective of this test case is to test requirement R21.
+ 
+R21:  Extract, transform, and load (ETL) and eScore algorithm processing speed for large datasets must be possible offline (e.g., overnight).
+ 
+Note:  The full pubmed dataset is considered large for the purpose of fulfilling this eScore v2.0 requirement.
+3.21.2 Inputs
+
+Pubmed archive [8]
+pubmedCentral.tgz
+3.21.3  Procedure
+
+3.21.3.1           Test: 
+1)    Run the baseline end-to-end scenario on the selected input.
+2)    Time from command entry to result display.
+3)    Retrieve the number of rows in the input file.
+3.21.4 Expected Outcome
+
+3.21.4.1           Test    The expected time to process large datasets is on the order of hours (h).  Complete the table below.
+
+Table 3.21-1.  Test Case T21 Results
+ 
+Input File	No. Rows	Query Time (h)
+pubmedCentral.tgz	 	 ​
+3.21.5 Other
+3.21.5.1           Environmental needs:  n.a.
+3.21.5.2           Special procedural requirements:  n.a.
+3.21.5.3           Intercase dependencies:  none
+
+ -->
+<div class="panel panel-default template"> 
+	<div class="row template" >
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 21</div>
+		</div>
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h4>Test 21 - Test    The expected time to process large datasets is on the order of hours (h).
+					</h4>
+				</div>
+				
+				<div class="row"  style="margin-top:10px;">
+					<div class="col-xs-6">
+						
+						<label>
+					    	<input type="radio" ng-model="test21dataset.name" value="all">
+						    all
+						 </label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test21dataset.name" value="pubmedCentral_001">
+					    	pubmedCentral_001
+					  	</label><br/>
+					 	<label>
+					    	<input type="radio" ng-model="test21dataset.name" value="pubmedCentral_01">
+					    	pubmedCentral_01
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test21dataset.name" value="pubmedCentral_1">
+					    	pubmedCentral_1
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test21dataset.name" value="pubmedCentral">
+					    	pubmedCentral
+					  	</label><br/>
+					  	
+					  	<tt>dataset = {{test21dataset.name | json}}</tt><br/>
+  
+ 
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<button class="btn btn-default" ng-click="test21()">
+							Run Test 21
+					</button>
+				</div>
+				<div class="row" style="margin-top:10px;" >
+				
+					<div class="col-md-3">
+						<strong>Input File</strong>
+					</div>
+					<div class="col-md-3">
+						<strong>Number of rows</strong>
+					</div>
+					<div class="col-md-3">
+						<strong>Total Time</strong>
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;" ng-repeat="result in test21results">
+				
+					<div class="col-md-3">
+					{{result.input_file}}
+					</div>
+					<div class="col-md-3">
+					{{result.numrows}}
+					</div>
+					<div class="col-md-3">
+					{{result.total_time}}
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<div>Test 21 {{test21results.test21 ? 'Passed' : 'Failed'}}</div> 
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+3.23     Test Case T23
+
+3.23.1 Objective
+
+The objective of this test case is to test requirement R23.
+ 
+R23:  System should produce the same results using the same input data and parameters on different computing systems, with the same hardware/software configurations.
+3.23.2 Inputs
+
+Pubmed archive [8]
+pubmedCentral_001.tgz
+3.23.3  Procedure
+
+3.23.3.1           Test:
+1)    Run the baseline end-to-end scenario on the selected input on the following systems:
+a.    ORNL Project Spark cluster
+b.    LLNL System
+c.     HSARPA Big Data System
+2)   For each system, identify the hardware/software configuration and save the results.
+3)    Compare the results from each system.
+ 
+3.23.4 Expected Outcome
+
+3.23.4.1           Test:   Though the systems running the test are not likely exactly the same hardware/software configurations, we expect the results to be the same.  That is, the order of entities ranked should be the same and their risk scores should be similar, if not equal (particularly if the result is deterministic, see Test T5).​
+3.23.5 Other
+3.23.5.1           Environmental needs:  n.a.
+
+3.23.5.2           Special procedural requirements:  n.a.
+
+3.23.5.3           Intercase dependencies:  none
+ -->
+<div class="panel panel-default template"> 
+	<div class="row template" >
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 23</div>
+		</div>
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h4>Test 23 - System should produce the same results using the same input data and parameters on different computing systems, with the same hardware/software configurations.
+					</h4>
+				</div>
+				<div class="row">
+					<div class="col-xs-2">
+			
+						<div class="dropdown">
+						  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    Input Dataset
+						    <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						    <!--  <li ng-click="test20('all')"><a>All</a></li> -->
+						    <li><a>pubmedCentral_001</a></li>
+						    <!-- <li ng-click="test20('pubmedCentral_01')"><a>pubmedCentral_01</a></li>  -->
+						    <!-- <li ng-click="test20('pubmedCentral1')"><a>pubmedCentral_1</a></li>  -->
+						    <!-- <li ng-click="test20('pubmedCentral')"><a>pubmedCentral</a></li>  -->
+						  </ul>
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    Sample Queries
+						    <span class="caret"></span>
+						  	</button>
+						  	<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						    	<li><a>Query1</a></li>
+						 	 </ul>
+						</div>
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<button class="btn btn-default" ng-click="test23('pubmedCentral_001','query1')">
+							Run Test 23
+					</button>
+				</div>
+				
+				<div class="row" style="margin-top:10px;">
+				
+					<div class="col-md-4">
+						<strong>ORNL Project Spark cluster</strong>
+						<div><a href ng-click="showORNL = !showORNL">Details</a></div>
+						<div ng-show="showORNL">{{ornl_details}}</div>
+					</div>
+					<div class="col-md-4">
+						<strong>LLNL System</strong>
+						<div><a href ng-click="showLLNL = !showLLNL">Details</a></div>
+						<div ng-show="showLLNL">{{llnl_details}}</div>
+					</div>
+					<div class="col-md-4">
+						<strong>HSARPA Big Data System</strong>
+						<div><a href ng-click="showHSARPA = !showHSARPA">Details</a></div>
+						<div ng-show="showHSARPA">{{hsarpa_details}}</div>
+					</div>
+				</div>
+				
+				
+				<div class="row" style="margin-top:10px;">
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-4">
+							name
+							</div>
+							<div class="col-md-4">
+							type
+							</div>
+							<div class="col-md-4">
+							total score
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-4">
+							name
+							</div>
+							<div class="col-md-4">
+							type
+							</div>
+							<div class="col-md-4">
+							total score
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-4">
+							name
+							</div>
+							<div class="col-md-4">
+							type
+							</div>
+							<div class="col-md-4">
+							total score
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<div class="col-md-4">
+					
+						<div class="row" ng-repeat="results in test23results">
+							<div class="col-md-4">
+							{{results.name}}
+							</div>
+							<div class="col-md-4">
+							{{results.type}}
+							</div>
+							<div class="col-md-4">
+							{{results.total_score}}
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="row" ng-repeat="results in test23LLNLresults">
+							<div class="col-md-4">
+							{{results.name}}
+							</div>
+							<div class="col-md-4">
+							{{results.type}}
+							</div>
+							<div class="col-md-4">
+							{{results.total_score}}
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="row" ng-repeat="results in test23HSARPAresults">
+							<div class="col-md-4">
+							{{results.name}}
+							</div>
+							<div class="col-md-4">
+							{{results.type}}
+							</div>
+							<div class="col-md-4">
+							{{results.total_score}}
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row" style="margin-top:10px;">
+					<div>Test 23 {{test23results.test23 ? 'Passed' : 'Failed'}}</div> 
+				</div>
+				
+			</div>
+		</div>	
+	</div>
+</div>
+
+
+
+</div>
