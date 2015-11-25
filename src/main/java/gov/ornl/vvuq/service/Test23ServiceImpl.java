@@ -20,16 +20,25 @@ public class Test23ServiceImpl implements Test23Service {
 	public static String responseDir2 = System.getProperty("user.dir");
 	public static String responseFileName2 = responseDir2 + "/files/end2end/" + "end2end_output.txt";
 	
+	public static String responseDir3 = System.getProperty("user.dir");
+	public static String responseFileName3 = responseDir3 + "/files/" + "query_results_end2end.txt";
+	
 	
     private static Map<String, Test23Response> test23ResponseMap;
+    
+    private static List<Test23Response> test23ResponseList;
     
     public Test23ServiceImpl() {
     	test23ResponseMap = new HashMap<String,Test23Response>();
         
         //List<Test23Response> examples = getFromFile();//getExamples();
         
-    	List<Test23Response> examples = getFromFile2();
+    	//List<Test23Response> examples = getFromFile2();
+    			
+    	List<Test23Response> examples = getFromFile();
     	
+    	test23ResponseList = examples;
+    			
         for(int i=0;i<examples.size();i++) {
         	test23ResponseMap.put(examples.get(i).getName(), examples.get(i));
         }
@@ -41,7 +50,7 @@ public class Test23ServiceImpl implements Test23Service {
 	@Override
 	public Collection<Test23Response> findAll() {
 		
-		Collection<Test23Response> responses = this.test23ResponseMap.values();
+		Collection<Test23Response> responses = this.test23ResponseList;//this.test23ResponseMap.values();
 
         return responses;
 	}
@@ -115,13 +124,66 @@ public class Test23ServiceImpl implements Test23Service {
     	return responses;
     }
     
+    /*
+    public static void main(String [] args) {
+    	Test23ServiceImpl test23 = new Test23ServiceImpl();
+    	
+    	
+    	List<Test23Response> examples = test23.getFromFile3();
+    	
+    }
+    */
+    
+    public List<Test23Response> getFromFile3() {
+    	
+    	Map<String,Test23Response> map = new HashMap<String,Test23Response>();
+		List<Test23Response> responses = new ArrayList<Test23Response>();
+    	try {
+			
+			for (String line : Files.readAllLines(Paths.get(responseFileName3))) {
+				Test23Response response = new Test23Response();
+				
+				String [] arr = line.split("\\|");
+				if(arr.length != 1) {
+
+					//System.out.println("line: " + line);
+					//System.out.println(arr.length);
+					response.setName(arr[0]);
+					response.setType(arr[1]);
+					Double value = Double.parseDouble(arr[2]);
+					arr[2] = Double.toString(round(value,5));
+					System.out.println("arr[2]: " + arr[2]);
+					response.setTotal_score(arr[2]);
+					response.setDissemination_equipment(arr[3]);
+					response.setPostproduction_equipment(arr[4]);
+					response.setResearch_words_and_materials(arr[5]);
+					String [] keywords = new String[arr.length-1-5];
+					int j = 0;
+					for(int i=6;i<arr.length;i++) {
+						keywords[j] = arr[i];
+						j++;
+					}
+					response.setKeywords(keywords);
+					map.put(response.getName(), response);
+					responses.add(response);
+				}
+				
+			}
+			System.out.println(map);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return responses;
+    }
+    
+    
     public List<Test23Response> getFromFile() {
     	
     	Map<String,Test23Response> map = new HashMap<String,Test23Response>();
 		List<Test23Response> responses = new ArrayList<Test23Response>();
     	try {
 			
-			for (String line : Files.readAllLines(Paths.get(responseFileName))) {
+			for (String line : Files.readAllLines(Paths.get(responseFileName3))) {
 				Test23Response response = new Test23Response();
 				
 				String [] arr = line.split("\\|");

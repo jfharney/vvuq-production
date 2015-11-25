@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import gov.ornl.vvuq.model.Greeting;
 import gov.ornl.vvuq.model.Test20Request;
 import gov.ornl.vvuq.model.Test20Response;
+import gov.ornl.vvuq.model.Test21Response;
 import gov.ornl.vvuq.model.Test23Request;
 import gov.ornl.vvuq.model.Test23Response;
 import gov.ornl.vvuq.model.Test3Request;
@@ -102,7 +103,7 @@ public class MainController {
     
     @RequestMapping(value="/test20",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Test20Response> test20(@RequestBody Test20Request test20Request) {
-
+    	
     	//inputFile
     	String inputFile = test20Request.getInputFile();
     	
@@ -110,13 +111,14 @@ public class MainController {
     	Test20Response response = new Test20Response();
     	
     	//read from file here?
-    	
+    	//hard coded for now
     	
     	response.setInputFile(inputFile);
-    	
-    	response.setNumRows("1000");
-    	
-    	response.setQueryTime("100ms");
+    	response.setNumRows("100000");
+    	String [] keywordSets = {"Dissemination-Equipment","Post-Production-Equipment","Research_Words_and_Materials"};
+    	response.setKeywordSets(keywordSets);
+    	response.setQueryTime("108ms");
+    	response.setEtlTime("41128ms");
     	
     	return new ResponseEntity<Test20Response>(response,
                 HttpStatus.OK);
@@ -126,24 +128,25 @@ public class MainController {
     
 
     @RequestMapping(value="/test21",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Test20Response> test21(@RequestBody Test20Request test20Request) {
+	public ResponseEntity<Test21Response> test21(@RequestBody Test20Request test21Request) {
 
     	//inputFile
-    	String inputFile = test20Request.getInputFile();
+    	String inputFile = test21Request.getInputFile();
     	
     	
-    	Test20Response response = new Test20Response();
+    	Test21Response response = new Test21Response();
     	
     	//read from file here?
-    	
+    	//hard coded for now
     	
     	response.setInputFile(inputFile);
+    	response.setNumRows("N/A");
+    	String [] keywordSets = {"Dissemination-Equipment","Post-Production-Equipment","Research_Words_and_Materials"};
+    	response.setKeywordSets(keywordSets);
+    	response.setQueryTime("N/A");
+    	response.setEtlTime("N/A");
     	
-    	response.setNumRows("100000");
-    	
-    	response.setQueryTime("100hr");
-    	
-    	return new ResponseEntity<Test20Response>(response,
+    	return new ResponseEntity<Test21Response>(response,
                 HttpStatus.OK);
     	
     	

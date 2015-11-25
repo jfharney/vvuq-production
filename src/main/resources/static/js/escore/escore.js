@@ -7,6 +7,20 @@ angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($sc
   $scope.test_type_time = '';
   */
 	
+  $scope.test3_show = false;
+  $scope.test4_show = false;
+  $scope.test5_show = false;
+  $scope.test20_show = false;
+  $scope.test21_show = false;
+  $scope.test23_show = false;
+	
+  
+  $scope.toggleTestCase = function(testcase) {
+	  var toggle = 'test' + testcase + '_show';
+	  console.log('toggle: ' + toggle);
+	  $scope[toggle] = !$scope[toggle];
+  }
+  
   
   $scope.available_datasets = VVUQ.available_datasets;
   $scope.keyword_sets = VVUQ.keyword_set_list;
@@ -30,7 +44,7 @@ angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($sc
   
   //returns a result set 
   $scope.test3 = function(dataset,query){
-		  //console.log('test23');
+		  console.log('dataset: ' + dataset);
 			
 			$http.post('/test3',{
 				'dataset' : dataset,//$scope.dbName,
@@ -44,8 +58,9 @@ angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($sc
 				$scope.results_test3 = data;
 				$scope.results_test3_10 = arr;//data;
 				for(var key in data) {
-					console.log('key: ' + key);
+					//console.log('key: ' + key);
 				}
+				$scope.show_results_test3 = true;
 			}).error(function(data){
 				console.log('error');
 			});
@@ -79,8 +94,13 @@ angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($sc
   
   //----test 4
 
+
+  $scope.test4dataset = { name : 'pubmedCentral_001'};
+		
   //reveals the result set for test 3
   $scope.show_results_test4 = false;
+  $scope.show_results_test4_5 = false;
+  $scope.show_results_test4_10 = false;
 
   //boolean representing if test passed or failed
   $scope.test_result_test4 = false;
@@ -89,7 +109,7 @@ angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($sc
   $scope.weights = [1,1,1,1,1,1,1,1];
   
   //returns a result set 
-  $scope.test4 = function(dataset,query){
+  $scope.test4Default = function(dataset,query){
 	  
 			$http.post('/test4',{
 				'dataset' : dataset,//$scope.dbName,
@@ -97,15 +117,25 @@ angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($sc
 			}).success(function(data){
 				console.log('success ' + data.length);
 				var arr = new Array();
+				var arr5 = new Array();
 				for(var i=0;i<VVUQ.num_listings;i++) {
 					arr.push(data[i]);
 				}
+				
+				for(var i=0;i<VVUQ.num_listings_best;i++) {
+					arr5.push(data[i]);
+				}
+				
 				$scope.results_test4 = data;
+				$scope.results_test4_5 = arr5;//data;
 				$scope.results_test4_10 = arr;//data;
 				for(var key in data) {
 					console.log('key: ' + key);
 				}
 				$scope.show_results_test4 = true;
+				$scope.show_results_test4_5 = true;
+				
+				console.log('$scope.show_results_test4_5: ' + $scope.show_results_test4_5);
 				
 			}).error(function(data){
 				console.log('error');
@@ -114,7 +144,54 @@ angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($sc
 	};
   
 
-  
+	//reveals the result set for test 3
+	  $scope.show_results_test4_customized = false;
+	  $scope.show_results_test4_5_customized = false;
+	  $scope.show_results_test4_10_customized = false;
+
+	  //weighted array
+	  $scope.weights_customized1 = [1,1,-1.0];
+	  $scope.weights_customized2 = [1,1,0.0];
+	  $scope.weights_customized3 = [1,1,0.5];
+	  $scope.weights_customized4 = [1,1,1.5];
+	  
+	  
+	//returns a result set 
+	  $scope.test4Customized = function(dataset,query){
+		  
+				$http.post('/test4',{
+					'dataset' : dataset,//$scope.dbName,
+					'query' : query,
+					
+				}).success(function(data){
+					console.log('success ' + data.length);
+					var arr = new Array();
+					var arr5 = new Array();
+					for(var i=0;i<VVUQ.num_listings;i++) {
+						arr.push(data[i]);
+					}
+					
+					for(var i=0;i<VVUQ.num_listings_best;i++) {
+						arr5.push(data[i]);
+					}
+					
+					$scope.results_test4_customized = data;
+					$scope.results_test4_5_customized = arr5;//data;
+					$scope.results_test4_10_customized = arr;//data;
+					for(var key in data) {
+						console.log('key: ' + key);
+					}
+					$scope.show_results_test4_customized = true;
+					$scope.show_results_test4_5_customized = true;
+					
+					
+				}).error(function(data){
+					console.log('error');
+				});
+				
+		};
+	  
+	
   
   //-----end test 4
   
@@ -193,6 +270,9 @@ angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($sc
 
 	$scope.test20results = '';
 	
+	
+	
+	
 	$scope.test20 = function(){
 		
 		$http.post('/test20',{
@@ -203,16 +283,50 @@ angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($sc
 				console.log('key: ' + key + " data: " + data[key]);
 			}
 			
-			$scope.results_test20 = data;
-			$scope.show_results_test20 = true;
+			$scope.resultstable_test20 = data;
+			$scope.show_resultstables_test20 = true;
+			
+			
+			$http.post('/test23',{
+				//'dataset' : dataset,//$scope.dbName,
+				//'query' : query
+			}).success(function(data){
+				
+				console.log('success test 20 ' + data.length);
+				var arr = new Array();
+				for(var i=0;i<VVUQ.num_listings;i++) {
+					arr.push(data[i]);
+				}
+				
+				var arr5 = new Array();
+				for(var i=0;i<VVUQ.num_listings_best;i++) {
+					arr5.push(data[i]);
+				}
+				
+				$scope.results_test20 = data;
+				$scope.results_test20_5 = arr5;//data;
+				$scope.results_test20_10 = arr;//data;
+				for(var key in data) {
+					//console.log('key: ' + key);
+				}
+
+				$scope.show_results_test20 = true;
+				
+			}).error(function(data){
+				console.log('error');
+			});
+			
+			
 		}).error(function(data){
 			console.log('error');
 			$scope.test_type_done = 'true';	
 		});
 		
+		
+		
+		
+		
 	};
-	
-	
 	
 	
 	      
@@ -242,6 +356,75 @@ angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($sc
 
 	$scope.test21results = '';
 	
+	
+	
+	
+	$scope.test21 = function(){
+		
+		$http.post('/test21',{
+			'inputFile' : $scope.test20dataset.name
+		}).success(function(data){
+			console.log('success');
+			for(var key in data) {
+				console.log('key: ' + key + " data: " + data[key]);
+			}
+			
+			$scope.resultstable_test21 = data;
+			$scope.show_resultstables_test21 = true;
+			
+			
+			$http.post('/test23',{
+				//'dataset' : dataset,//$scope.dbName,
+				//'query' : query
+			}).success(function(data){
+				
+				console.log('success test 21 ' + data.length);
+				var arr = new Array();
+				for(var i=0;i<VVUQ.num_listings;i++) {
+					arr.push(data[i]);
+				}
+				
+				var arr5 = new Array();
+				for(var i=0;i<VVUQ.num_listings_best;i++) {
+					arr5.push(data[i]);
+				}
+				
+				$scope.results_test21 = data;
+				$scope.results_test21_5 = arr5;//data;
+				$scope.results_test21_10 = arr;//data;
+				for(var key in data) {
+					//console.log('key: ' + key);
+				}
+
+				$scope.show_results_test21 = true;
+				
+			}).error(function(data){
+				console.log('error');
+			});
+			
+			
+		}).error(function(data){
+			console.log('error');
+			$scope.test_type_done = 'true';	
+		});
+		
+		
+		
+		
+		
+	};
+	
+	
+	
+	/*
+	$scope.show_results_test21 = false;
+	
+	$scope.inputFile_test21 = '';
+
+	$scope.test21dataset = { name : 'pubmedCentral_001'};
+
+	$scope.test21results = '';
+	
 	$scope.test21 = function(){
 		
 		$http.post('/test21',{
@@ -261,7 +444,7 @@ angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($sc
 		
 	};
 	
-	
+	*/
 	
 	
 	
@@ -322,6 +505,10 @@ angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($sc
 	
 	
 	*/
+	
+
+	$scope.test23dataset = { name : 'pubmedCentral_001'};
+	
 	//details about ornl specs
 	$scope.ornl_details = VVUQ.ornl_details;
 	

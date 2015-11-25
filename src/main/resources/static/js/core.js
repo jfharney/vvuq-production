@@ -1,6 +1,7 @@
 var VVUQ = VVUQ || {};
 
 VVUQ.num_listings = 10;
+VVUQ.num_listings_best = 5;
 
 
 VVUQ.keyword_list = ['keyword1', 'keyword2', 'keyword3', 'keyword4', 'keyword5'];

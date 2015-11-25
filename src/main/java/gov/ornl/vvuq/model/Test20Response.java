@@ -4,7 +4,9 @@ public class Test20Response {
 
     private String inputFile;
 	private String numRows;
+	private String [] keywordSets;
     private String queryTime;
+    private String etlTime;
 
     public Test20Response() {
 
@@ -32,6 +34,22 @@ public class Test20Response {
 
 	public void setQueryTime(String queryTime) {
 		this.queryTime = queryTime;
+	}
+
+	public String [] getKeywordSets() {
+		return keywordSets;
+	}
+
+	public void setKeywordSets(String [] keywordSets) {
+		this.keywordSets = keywordSets;
+	}
+
+	public String getEtlTime() {
+		return etlTime;
+	}
+
+	public void setEtlTime(String etlTime) {
+		this.etlTime = etlTime;
 	}
 
     
