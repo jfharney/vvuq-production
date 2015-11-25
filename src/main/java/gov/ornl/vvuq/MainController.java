@@ -1,8 +1,11 @@
 package gov.ornl.vvuq;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Random;
+import java.util.StringTokenizer;
 import java.util.Vector;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import gov.ornl.vvuq.model.Greeting;
+import gov.ornl.vvuq.model.Test20Request;
 import gov.ornl.vvuq.model.Test20Response;
 import gov.ornl.vvuq.model.Test23Request;
 import gov.ornl.vvuq.model.Test23Response;
@@ -48,6 +52,212 @@ public class MainController {
 	
 
     
+
+    @RequestMapping(value="/test3",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
+   	public ResponseEntity<Collection<Test23Response>> test3(@RequestBody Test23Request test23Request) {
+
+       	
+       	//Map<String,Test23Response> test23ResponseMap = test23Service.getTest23ResponseMap();
+       	
+       	Collection<Test23Response> responses = test23Service.findAll();
+       	
+       	
+       	return new ResponseEntity<Collection<Test23Response>>(responses,
+                   HttpStatus.OK);
+       	
+       	
+       }
+       
+
+    @RequestMapping(value="/test4",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
+   	public ResponseEntity<Collection<Test23Response>> test4(@RequestBody Test23Request test23Request) {
+
+       	
+       	//Map<String,Test23Response> test23ResponseMap = test23Service.getTest23ResponseMap();
+       	
+       	Collection<Test23Response> responses = test23Service.findAll();
+       	
+       	
+       	return new ResponseEntity<Collection<Test23Response>>(responses,
+                   HttpStatus.OK);
+       	
+       	
+       }
+       
+    @RequestMapping(value="/test5",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
+   	public ResponseEntity<Collection<Test23Response>> test5(@RequestBody Test23Request test23Request) {
+
+       	
+       	//Map<String,Test23Response> test23ResponseMap = test23Service.getTest23ResponseMap();
+       	
+       	Collection<Test23Response> responses = test23Service.findAll();
+       	
+       	
+       	return new ResponseEntity<Collection<Test23Response>>(responses,
+                   HttpStatus.OK);
+       	
+       	
+       }
+       
+    
+    @RequestMapping(value="/test20",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Test20Response> test20(@RequestBody Test20Request test20Request) {
+
+    	//inputFile
+    	String inputFile = test20Request.getInputFile();
+    	
+    	
+    	Test20Response response = new Test20Response();
+    	
+    	//read from file here?
+    	
+    	
+    	response.setInputFile(inputFile);
+    	
+    	response.setNumRows("1000");
+    	
+    	response.setQueryTime("100ms");
+    	
+    	return new ResponseEntity<Test20Response>(response,
+                HttpStatus.OK);
+    	
+    	
+    }
+    
+
+    @RequestMapping(value="/test21",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Test20Response> test21(@RequestBody Test20Request test20Request) {
+
+    	//inputFile
+    	String inputFile = test20Request.getInputFile();
+    	
+    	
+    	Test20Response response = new Test20Response();
+    	
+    	//read from file here?
+    	
+    	
+    	response.setInputFile(inputFile);
+    	
+    	response.setNumRows("100000");
+    	
+    	response.setQueryTime("100hr");
+    	
+    	return new ResponseEntity<Test20Response>(response,
+                HttpStatus.OK);
+    	
+    	
+    }
+    
+    
+    @RequestMapping(value="/test23",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Collection<Test23Response>> test23(@RequestBody Test23Request test23Request) {
+
+    	
+    	//Map<String,Test23Response> test23ResponseMap = test23Service.getTest23ResponseMap();
+    	
+    	Collection<Test23Response> responses = test23Service.findAll();
+    	
+    	
+    	return new ResponseEntity<Collection<Test23Response>>(responses,
+                HttpStatus.OK);
+    	
+    	
+    }
+    
+    
+    /*
+    public static void main(String [] args) {
+    	try {
+    		boolean inResults = false;
+    		
+    		String responseDir2 = System.getProperty("user.dir");
+    		String responseFileName2 = responseDir2 + "/files/" + "keywords.txt";
+    		
+			for (String line : Files.readAllLines(Paths.get(responseFileName2))) {
+				
+				Test23Response response = new Test23Response();
+				System.out.println("line: " + line);
+				String [] arr = line.split(" ");
+				StringTokenizer tokens = new StringTokenizer(line);
+				System.out.println(tokens.countTokens());
+				//System.out.println(arr.length);
+				
+			}
+    	}catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    }
+    */
+    
+    @RequestMapping(
+            value = "/keywordset",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Collection<Greeting>> getKeywordSets() {
+
+    	
+    	System.out.println("In keywordset service");
+    	
+    	
+    	
+        Collection<Greeting> greetings = greetingService.findAll();
+
+        return new ResponseEntity<Collection<Greeting>>(greetings,
+                HttpStatus.OK);
+    }
+    
+    
+    
+    @RequestMapping(
+            value = "/api/greetings",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Collection<Greeting>> getGreetings() {
+
+    	
+    	System.out.println("In service");
+    	
+        Collection<Greeting> greetings = greetingService.findAll();
+
+        return new ResponseEntity<Collection<Greeting>>(greetings,
+                HttpStatus.OK);
+    }
+    
+    
+    /*
+    private String [] keywordHelper(String [] selected_keywords, String [] all_keywords) {
+    	
+    	Vector<String> unselected_keywords_vector = new Vector<String>();
+    	
+    	boolean isSelected = false;
+    	for(int i=0;i<all_keywords.length;i++) {
+
+    		//System.out.println("i: " + i + " keyword: " + all_keywords[i]);
+    		
+    		for(int j=0;j<selected_keywords.length;j++) {
+    			//System.out.println("\tSel: " + selected_keywords[j] + " all: " + all_keywords[i] + " " + (selected_keywords[j].equals(all_keywords[i])));
+    			if(selected_keywords[j].equals(all_keywords[i])) {
+    				isSelected = true;
+    			}
+    		}
+    		//System.out.println("Isselected: " + isSelected);
+    		if(!isSelected) {
+    			unselected_keywords_vector.addElement(all_keywords[i]);
+    		}
+    		isSelected = false;
+    	}
+    	//System.out.println(unselected_keywords_vector);
+    	String [] unselected_keywords = new String [unselected_keywords_vector.size()];
+    	for(int i=0;i<unselected_keywords.length;i++) {
+    		unselected_keywords[i] = unselected_keywords_vector.get(i);
+    	}
+    	
+    	return unselected_keywords;
+    }
+    */
+	
+
     /*
     @RequestMapping(value="/test20", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	//public ResponseEntity<Test20Response> getTest20(@PathVariable("id") String id) {
@@ -94,6 +304,7 @@ public class MainController {
     */
     
 	
+	/*
     @RequestMapping(value="/test3",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Test3Response> test3(@RequestBody Test3Request test3Request) {
 
@@ -147,89 +358,6 @@ public class MainController {
 		
 		return new ResponseEntity<Test3Response>(test3Response, HttpStatus.CREATED);
 	}
+    */
     
-    
-    
-    
-    
-    @RequestMapping(value="/test23",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Collection<Test23Response>> test23(@RequestBody Test23Request test23Request) {
-
-    	
-    	//Map<String,Test23Response> test23ResponseMap = test23Service.getTest23ResponseMap();
-    	
-    	Collection<Test23Response> responses = test23Service.findAll();
-    	
-    	/*
-    	Test23Response test23Response = new Test23Response();
-    	if(test23ResponseMap == null) {
-    		System.out.println("Map is null?");
-    		return new ResponseEntity<Test23Response>(test23Response, HttpStatus.CREATED);
-    	} else {
-    		System.out.println("Map is not null?");
-    		test23Response = test23ResponseMap.get("Muhammad Ibrahim");
-    		for(String key : test23ResponseMap.keySet()) {
-    			System.out.println(key);
-    		}
-    		//System.out.println("response: " + test23Response.getTotal_score());
-    		return new ResponseEntity<Test23Response>(test23Response, HttpStatus.CREATED);
-    	}
-    	*/
-    	
-    	return new ResponseEntity<Collection<Test23Response>>(responses,
-                HttpStatus.OK);
-    	
-    	
-    	
-    }
-    
-    
-    
-    @RequestMapping(
-            value = "/api/greetings",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Collection<Greeting>> getGreetings() {
-
-    	
-    	System.out.println("In service");
-    	
-        Collection<Greeting> greetings = greetingService.findAll();
-
-        return new ResponseEntity<Collection<Greeting>>(greetings,
-                HttpStatus.OK);
-    }
-    
-    
-    
-    private String [] keywordHelper(String [] selected_keywords, String [] all_keywords) {
-    	
-    	Vector<String> unselected_keywords_vector = new Vector<String>();
-    	
-    	boolean isSelected = false;
-    	for(int i=0;i<all_keywords.length;i++) {
-
-    		//System.out.println("i: " + i + " keyword: " + all_keywords[i]);
-    		
-    		for(int j=0;j<selected_keywords.length;j++) {
-    			//System.out.println("\tSel: " + selected_keywords[j] + " all: " + all_keywords[i] + " " + (selected_keywords[j].equals(all_keywords[i])));
-    			if(selected_keywords[j].equals(all_keywords[i])) {
-    				isSelected = true;
-    			}
-    		}
-    		//System.out.println("Isselected: " + isSelected);
-    		if(!isSelected) {
-    			unselected_keywords_vector.addElement(all_keywords[i]);
-    		}
-    		isSelected = false;
-    	}
-    	//System.out.println(unselected_keywords_vector);
-    	String [] unselected_keywords = new String [unselected_keywords_vector.size()];
-    	for(int i=0;i<unselected_keywords.length;i++) {
-    		unselected_keywords[i] = unselected_keywords_vector.get(i);
-    	}
-    	
-    	return unselected_keywords;
-    }
-	
 }

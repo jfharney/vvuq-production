@@ -1,0 +1,534 @@
+KeywordList	Acquisition-Equipment				Environmental sampling																										
+KeywordList	Acquisition-Equipment				Selective medium																										
+KeywordList	Acquisition-Equipment				Selective agar																										
+KeywordList	Acquisition-Equipment				Virus isolation																										
+KeywordList	Acquisition-Equipment				Selective enrichment																										
+KeywordList	Acquisition-Equipment				Pathogen detection																										
+KeywordList	Acquisition-Equipment				Selective isolation																										
+KeywordList	Production-Equipment				Airlift Bioreactor																										
+KeywordList	Production-Equipment				Bioreactor																										
+KeywordList	Production-Equipment				Brewing Reactor																										
+KeywordList	Production-Equipment				Chemostat																										
+KeywordList	Production-Equipment				Continuous-Flow System																										
+KeywordList	Production-Equipment				Egg Incubator																										
+KeywordList	Production-Equipment				Egg Inoculator																										
+KeywordList	Production-Equipment				Fermentation Reactor																										
+KeywordList	Production-Equipment				Fermentation Vessel																										
+KeywordList	Production-Equipment				Fermenter																										
+KeywordList	Production-Equipment				Fermenter Vessel																										
+KeywordList	Production-Equipment				Fermenting Reactor																										
+KeywordList	Production-Equipment				Fermenting Vessel																										
+KeywordList	Production-Equipment				Fermentor																										
+KeywordList	Production-Equipment				Orbital Shaker																										
+KeywordList	Production-Equipment				Shaker Incubator																										
+KeywordList	Post-Production-Equipment				Acetone Dryer																										
+KeywordList	Post-Production-Equipment				Ball Mill																										
+KeywordList	Post-Production-Equipment				Centrifugal Concentrator																										
+KeywordList	Post-Production-Equipment				Centrifugal Evaporator																										
+KeywordList	Post-Production-Equipment				Centrifugal Separator																										
+KeywordList	Post-Production-Equipment				Centrifuge																										
+KeywordList	Post-Production-Equipment				Centrifuge-Dryer																										
+KeywordList	Post-Production-Equipment				Coacervator																										
+KeywordList	Post-Production-Equipment				Concentrator																										
+KeywordList	Post-Production-Equipment				Continuous Granulator																										
+KeywordList	Post-Production-Equipment				Crossflow Filtration System																										
+KeywordList	Post-Production-Equipment				Diatomaceous Earth Filter																										
+KeywordList	Post-Production-Equipment				Differential Freezing Separator																										
+KeywordList	Post-Production-Equipment				Fluidized Spray Dryer																										
+KeywordList	Post-Production-Equipment				Freeze Dryer																										
+KeywordList	Post-Production-Equipment				Jet Mill																										
+KeywordList	Post-Production-Equipment				Lyophilization Chamber																										
+KeywordList	Post-Production-Equipment				Lyophilizer																										
+KeywordList	Post-Production-Equipment				Particle Sizer																										
+KeywordList	Post-Production-Equipment				Powder Blender																										
+KeywordList	Post-Production-Equipment				Powder Coater																										
+KeywordList	Post-Production-Equipment				Powder Grinder																										
+KeywordList	Post-Production-Equipment				Powder Mixer																										
+KeywordList	Post-Production-Equipment				Micronizer																										
+KeywordList	Post-Production-Equipment				Rotating Separator																										
+KeywordList	Post-Production-Equipment				Sedimentation Separator																										
+KeywordList	Post-Production-Equipment				Single-Use Biomixer																										
+KeywordList	Post-Production-Equipment				Single-Use Fluid Mixer																										
+KeywordList	Post-Production-Equipment				Sonic Mixer																										
+KeywordList	Post-Production-Equipment				Spinning Separator																										
+KeywordList	Post-Production-Equipment				Spray Chiller																										
+KeywordList	Post-Production-Equipment				Spray Dryer																										
+KeywordList	Post-Production-Equipment				Tangential Flow Filtration System																										
+KeywordList	Post-Production-Equipment				Vacuum Drum																										
+KeywordList	Dissemination-Equipment				Aerosol Fogger																										
+KeywordList	Dissemination-Equipment				Aerosol Inhalation Chamber																										
+KeywordList	Dissemination-Equipment				Aerosol Sprayer																										
+KeywordList	Dissemination-Equipment				Aerosolizer																										
+KeywordList	Dissemination-Equipment				Agricultural Sprayer																										
+KeywordList	Dissemination-Equipment				Air Disperser																										
+KeywordList	Dissemination-Equipment				Atomizer																										
+KeywordList	Dissemination-Equipment				Centrifugal Atomizer																										
+KeywordList	Dissemination-Equipment				Cold Fogger																										
+KeywordList	Dissemination-Equipment				Dissemination Apparatus																										
+KeywordList	Dissemination-Equipment				Dissemination Head																										
+KeywordList	Dissemination-Equipment				Dissemination Kit																										
+KeywordList	Dissemination-Equipment				Dissemination Nozzle																										
+KeywordList	Dissemination-Equipment				Disseminator																										
+KeywordList	Dissemination-Equipment				Dose Inhaler Meter																										
+KeywordList	Dissemination-Equipment				Dry Powder Inhaler																										
+KeywordList	Dissemination-Equipment				Dry Sprayer																										
+KeywordList	Dissemination-Equipment				Electrostatic Sprayer																										
+KeywordList	Dissemination-Equipment				Fog Sprayer																										
+KeywordList	Dissemination-Equipment				Fogger																										
+KeywordList	Dissemination-Equipment				Fogger Sprayer																										
+KeywordList	Dissemination-Equipment				Inhaler																										
+KeywordList	Dissemination-Equipment				Jet Sprayer																										
+KeywordList	Dissemination-Equipment				Kinetic Nozzle																										
+KeywordList	Dissemination-Equipment				Liquid Atomizer																										
+KeywordList	Dissemination-Equipment				Liquid Delivery System																										
+KeywordList	Dissemination-Equipment				Liquid Dissemination Apparatus																										
+KeywordList	Dissemination-Equipment				Liquid Dissemination System																										
+KeywordList	Dissemination-Equipment				Liquid Disseminator																										
+KeywordList	Dissemination-Equipment				Liquid Fogger																										
+KeywordList	Dissemination-Equipment				Liquid Mister																										
+KeywordList	Dissemination-Equipment				Liquid Sprayer																										
+KeywordList	Dissemination-Equipment				Micro Sprayer																										
+KeywordList	Dissemination-Equipment				Mist Blower																										
+KeywordList	Dissemination-Equipment				Mist Sprayer																										
+KeywordList	Dissemination-Equipment				Mister																										
+KeywordList	Dissemination-Equipment				Nanosprayer																										
+KeywordList	Dissemination-Equipment				Nebulizer																										
+KeywordList	Dissemination-Equipment				Nozzle Atomizer																										
+KeywordList	Dissemination-Equipment				Pneumatic Sprayer																										
+KeywordList	Dissemination-Equipment				Powder Delivery System																										
+KeywordList	Dissemination-Equipment				Powder Disseminator																										
+KeywordList	Dissemination-Equipment				Powder Distributor																										
+KeywordList	Dissemination-Equipment				Powder Duster																										
+KeywordList	Dissemination-Equipment				Powder Jet																										
+KeywordList	Dissemination-Equipment				Powder Sprayer																										
+KeywordList	Dissemination-Equipment				Pressure Atomizer																										
+KeywordList	Dissemination-Equipment				Pressure Nozzle Atomizer																										
+KeywordList	Dissemination-Equipment				Pressure Sprayer																										
+KeywordList	Dissemination-Equipment				Rotary Atomizer																										
+KeywordList	Dissemination-Equipment				Rotary Disk Atomizer																										
+KeywordList	Dissemination-Equipment				Single-Fluid Nozzle																										
+KeywordList	Dissemination-Equipment				Sonic Sprayer																										
+KeywordList	Dissemination-Equipment				Sterile Feed Atomizer																										
+KeywordList	Dissemination-Equipment				Two-Fluid Nozzle																										
+KeywordList	Dissemination-Equipment				ULV Fogger																										
+KeywordList	Dissemination-Equipment				Ultra-Low-Volume Fogger																										
+KeywordList	Dissemination-Equipment				Ultrasonic Sprayer																										
+KeywordList	Dissemination-Equipment				Vibrational Nozzle																										
+KeywordList	Dissemination-Equipment				Water Sprayer																										
+KeywordList	Safety-Equipment				Anaerobic Chamber																										
+KeywordList	Safety-Equipment				Dry Box																										
+KeywordList	Safety-Equipment				Ductless Fume Hood																										
+KeywordList	Safety-Equipment				Environment Chamber																										
+KeywordList	Safety-Equipment				Flexible Isolator																										
+KeywordList	Safety-Equipment				HEPA Filter																										
+KeywordList	Safety-Equipment				HEPA UV Hood																										
+KeywordList	Safety-Equipment				HEPA UV Station																										
+KeywordList	Safety-Equipment				HEPA Ultraviolet Hood																										
+KeywordList	Safety-Equipment				HEPA Ultraviolet Station																										
+KeywordList	Safety-Equipment				High Efficiency Particle Absorbing Filter																										
+KeywordList	Safety-Equipment				High Efficiency Particle Absorbing UV Hood																										
+KeywordList	Safety-Equipment				High Efficiency Particle Absorbing UV Station																										
+KeywordList	Safety-Equipment				High Efficiency Particle Absorbing Ultraviolet Hood																										
+KeywordList	Safety-Equipment				High Efficiency Particle Absorbing Ultraviolet Station																										
+KeywordList	Safety-Equipment				High Efficiency Particle Air Ultraviolet Station																										
+KeywordList	Safety-Equipment				High Efficiency Particle Arrestance Filter																										
+KeywordList	Safety-Equipment				High Efficiency Particle Arrestance UV Hood																										
+KeywordList	Safety-Equipment				High Efficiency Particle Arrestance UV Station																										
+KeywordList	Safety-Equipment				High Efficiency Particle Arrestance Ultraviolet Hood																										
+KeywordList	Safety-Equipment				High Efficiency Particle Arrestance Ultraviolet Station																										
+KeywordList	Safety-Equipment				Laminar Flow Hood																										
+KeywordList	Safety-Equipment				Respirator																										
+KeywordList	Safety-Equipment				Vinyl Glove Box																										
+KeywordList	Safety-Equipment				Vinyl Glove Box Chamber																										
+KeywordList	Research_Words_and_Materials				2-dimensional gel electrophoresis																										
+KeywordList	Research_Words_and_Materials				2YT Broth																										
+KeywordList	Research_Words_and_Materials				Acrylamide gel electrophoresis																										
+KeywordList	Research_Words_and_Materials				Adjuvant																										
+KeywordList	Research_Words_and_Materials				Aerosol dissemination																										
+KeywordList	Research_Words_and_Materials				Agar plates																										
+KeywordList	Research_Words_and_Materials				Airborne dissemination																										
+KeywordList	Research_Words_and_Materials				Amoeba																										
+KeywordList	Research_Words_and_Materials				Animal cell culture																										
+KeywordList	Research_Words_and_Materials				Antibiotic resistance																										
+KeywordList	Research_Words_and_Materials				Anticodon																										
+KeywordList	Research_Words_and_Materials				Artificial Chromosome																										
+KeywordList	Research_Words_and_Materials				Bacteria																										
+KeywordList	Research_Words_and_Materials				Bacteria Culture																										
+KeywordList	Research_Words_and_Materials				Bacteria isolate																										
+KeywordList	Research_Words_and_Materials				Bacterial transformation																										
+KeywordList	Research_Words_and_Materials				Bacteriocin plasmid																										
+KeywordList	Research_Words_and_Materials				Bio-agent																										
+KeywordList	Research_Words_and_Materials				Biological agent dissemination																										
+KeywordList	Research_Words_and_Materials				Biological agent Post-Production																										
+KeywordList	Research_Words_and_Materials				Biosynthesis																										
+KeywordList	Research_Words_and_Materials				Biosynthetic																										
+KeywordList	Research_Words_and_Materials				Burette																										
+KeywordList	Research_Words_and_Materials				Capillary electrophoreses																										
+KeywordList	Research_Words_and_Materials				Cell ampoules																										
+KeywordList	Research_Words_and_Materials				Cell culture																										
+KeywordList	Research_Words_and_Materials				Cell culture bag																										
+KeywordList	Research_Words_and_Materials				Cell line																										
+KeywordList	Research_Words_and_Materials				Centrifuge tube																										
+KeywordList	Research_Words_and_Materials				Chemically-defined medium																										
+KeywordList	Research_Words_and_Materials				Chromatids																										
+KeywordList	Research_Words_and_Materials				Chromatin																										
+KeywordList	Research_Words_and_Materials				Chromosome																										
+KeywordList	Research_Words_and_Materials				Chromosome inversion																										
+KeywordList	Research_Words_and_Materials				Clone cell																										
+KeywordList	Research_Words_and_Materials				Clotting factor																										
+KeywordList	Research_Words_and_Materials				Coacervation																										
+KeywordList	Research_Words_and_Materials				Codon																										
+KeywordList	Research_Words_and_Materials				Co-fermentation																										
+KeywordList	Research_Words_and_Materials				Comparative genomics																										
+KeywordList	Research_Words_and_Materials				Comparative Hybridization																										
+KeywordList	Research_Words_and_Materials				Continuous flow electrophoresis																										
+KeywordList	Research_Words_and_Materials				Cosmids																										
+KeywordList	Research_Words_and_Materials				Cryopreservation																										
+KeywordList	Research_Words_and_Materials				Cryovial																										
+KeywordList	Research_Words_and_Materials				Defined medium																										
+KeywordList	Research_Words_and_Materials				Deoxyribonucleic acid																										
+KeywordList	Research_Words_and_Materials				Diagnostic reagent																										
+KeywordList	Research_Words_and_Materials				Dialysis membrane																										
+KeywordList	Research_Words_and_Materials				Disease																										
+KeywordList	Research_Words_and_Materials				Disease isolate																										
+KeywordList	Research_Words_and_Materials				DNA																										
+KeywordList	Research_Words_and_Materials				DNA Hybridization																										
+KeywordList	Research_Words_and_Materials				DNA microarray																										
+KeywordList	Research_Words_and_Materials				DNA transfection																										
+KeywordList	Research_Words_and_Materials				Engineered enzymes																										
+KeywordList	Research_Words_and_Materials				Enucleated egg																										
+KeywordList	Research_Words_and_Materials				Enzyme																										
+KeywordList	Research_Words_and_Materials				Exon																										
+KeywordList	Research_Words_and_Materials				Expressed sequence tag																										
+KeywordList	Research_Words_and_Materials				Fast protein liquid chromatography																										
+KeywordList	Research_Words_and_Materials				Fermentation																										
+KeywordList	Research_Words_and_Materials				Fermentation medium																										
+KeywordList	Research_Words_and_Materials				Fermenting flask																										
+KeywordList	Research_Words_and_Materials				Fluorescent microscopy																										
+KeywordList	Research_Words_and_Materials				FPLC																										
+KeywordList	Research_Words_and_Materials				Fungus																										
+KeywordList	Research_Words_and_Materials				Gel electrophoresis																										
+KeywordList	Research_Words_and_Materials				Gel filtration																										
+KeywordList	Research_Words_and_Materials				Gene																										
+KeywordList	Research_Words_and_Materials				Gene amplification																										
+KeywordList	Research_Words_and_Materials				Gene expression																										
+KeywordList	Research_Words_and_Materials				Gene library																										
+KeywordList	Research_Words_and_Materials				Gene overexpression																										
+KeywordList	Research_Words_and_Materials				Gene splicing																										
+KeywordList	Research_Words_and_Materials				Gene synthesis																										
+KeywordList	Research_Words_and_Materials				Genetic code																										
+KeywordList	Research_Words_and_Materials				Genetic conjugation																										
+KeywordList	Research_Words_and_Materials				Genetic drift																										
+KeywordList	Research_Words_and_Materials				Genetic engineering																										
+KeywordList	Research_Words_and_Materials				Genetic heterogeneity																										
+KeywordList	Research_Words_and_Materials				Genetic predisposition to disease																										
+KeywordList	Research_Words_and_Materials				Genetic speciation																										
+KeywordList	Research_Words_and_Materials				Genetic transformation																										
+KeywordList	Research_Words_and_Materials				Genetic vector																										
+KeywordList	Research_Words_and_Materials				Genome																										
+KeywordList	Research_Words_and_Materials				Genotype																										
+KeywordList	Research_Words_and_Materials				Growth medium																										
+KeywordList	Research_Words_and_Materials				Heparin																										
+KeywordList	Research_Words_and_Materials				High pathogenicity island																										
+KeywordList	Research_Words_and_Materials				High performance liquid chromatography																										
+KeywordList	Research_Words_and_Materials				High pressure liquid chromatography																										
+KeywordList	Research_Words_and_Materials				HPLC																										
+KeywordList	Research_Words_and_Materials				Hybridoma																										
+KeywordList	Research_Words_and_Materials				In vivo																										
+KeywordList	Research_Words_and_Materials				Infected																										
+KeywordList	Research_Words_and_Materials				Infectious																										
+KeywordList	Research_Words_and_Materials				Inoculating loop																										
+KeywordList	Research_Words_and_Materials				Inoculum																										
+KeywordList	Research_Words_and_Materials				Insect cell culture																										
+KeywordList	Research_Words_and_Materials				Intron																										
+KeywordList	Research_Words_and_Materials				Lactalbumin																										
+KeywordList	Research_Words_and_Materials				LB Broth																										
+KeywordList	Research_Words_and_Materials				Leukocyte																										
+KeywordList	Research_Words_and_Materials				Liquid culture																										
+KeywordList	Research_Words_and_Materials				Liquid gel electrophoresis																										
+KeywordList	Research_Words_and_Materials				Metal-ion affinity chromatography																										
+KeywordList	Research_Words_and_Materials				Microarray																										
+KeywordList	Research_Words_and_Materials				Microbe																										
+KeywordList	Research_Words_and_Materials				Microbial																										
+KeywordList	Research_Words_and_Materials				Microbiology spreader																										
+KeywordList	Research_Words_and_Materials				Microelectrophoresis																										
+KeywordList	Research_Words_and_Materials				Microorganism																										
+KeywordList	Research_Words_and_Materials				Microscopy																										
+KeywordList	Research_Words_and_Materials				Microtitre plate																										
+KeywordList	Research_Words_and_Materials				Molecular cloning																										
+KeywordList	Research_Words_and_Materials				Monoclonal																										
+KeywordList	Research_Words_and_Materials				Mucosa																										
+KeywordList	Research_Words_and_Materials				Mucus																										
+KeywordList	Research_Words_and_Materials				Mutagenesis																										
+KeywordList	Research_Words_and_Materials				Nanobiotechnology																										
+KeywordList	Research_Words_and_Materials				Nucleic																										
+KeywordList	Research_Words_and_Materials				Nucleotide																										
+KeywordList	Research_Words_and_Materials				Organ preservation																										
+KeywordList	Research_Words_and_Materials				Organism																										
+KeywordList	Research_Words_and_Materials				Oxytocin																										
+KeywordList	Research_Words_and_Materials				Parasite																										
+KeywordList	Research_Words_and_Materials				Pathogen																										
+KeywordList	Research_Words_and_Materials				Pathogen isolate																										
+KeywordList	Research_Words_and_Materials				Pathogenic																										
+KeywordList	Research_Words_and_Materials				Pathogenicity																										
+KeywordList	Research_Words_and_Materials				Pepsin																										
+KeywordList	Research_Words_and_Materials				Peptide																										
+KeywordList	Research_Words_and_Materials				Petri dish																										
+KeywordList	Research_Words_and_Materials				Phage																										
+KeywordList	Research_Words_and_Materials				Phage display																										
+KeywordList	Research_Words_and_Materials				Pharmaceutical																										
+KeywordList	Research_Words_and_Materials				Phenotype																										
+KeywordList	Research_Words_and_Materials				Phenotypic variant																										
+KeywordList	Research_Words_and_Materials				Phylogeny																										
+KeywordList	Research_Words_and_Materials				Plant cell culture																										
+KeywordList	Research_Words_and_Materials				Plasmid																										
+KeywordList	Research_Words_and_Materials				Plate replicator																										
+KeywordList	Research_Words_and_Materials				Polymerase chain Reaction																										
+KeywordList	Research_Words_and_Materials				Prion																										
+KeywordList	Research_Words_and_Materials				Protein																										
+KeywordList	Research_Words_and_Materials				Protein coat																										
+KeywordList	Research_Words_and_Materials				Protein engineering																										
+KeywordList	Research_Words_and_Materials				Protein expression																										
+KeywordList	Research_Words_and_Materials				Protein fraction																										
+KeywordList	Research_Words_and_Materials				Pulsed electrophoresis																										
+KeywordList	Research_Words_and_Materials				Quantitative PCR																										
+KeywordList	Research_Words_and_Materials				Real Time PCR																										
+KeywordList	Research_Words_and_Materials				Recombinant																										
+KeywordList	Research_Words_and_Materials				Recombinant DNA																										
+KeywordList	Research_Words_and_Materials				Recombinant Protein																										
+KeywordList	Research_Words_and_Materials				Reverse field electrophoresis																										
+KeywordList	Research_Words_and_Materials				Ribonucleic acid																										
+KeywordList	Research_Words_and_Materials				RNA																										
+KeywordList	Research_Words_and_Materials				RNA Hybridization																										
+KeywordList	Research_Words_and_Materials				Saccharomyces cerevisiae																										
+KeywordList	Research_Words_and_Materials				SDS-PAGE																										
+KeywordList	Research_Words_and_Materials				Seed Culture																										
+KeywordList	Research_Words_and_Materials				Seed Vessel																										
+KeywordList	Research_Words_and_Materials				Serological																										
+KeywordList	Research_Words_and_Materials				Serotype																										
+KeywordList	Research_Words_and_Materials				Single-cell microorganism																										
+KeywordList	Research_Words_and_Materials				Size reduction grinding ball																										
+KeywordList	Research_Words_and_Materials				Spore																										
+KeywordList	Research_Words_and_Materials				Steroid																										
+KeywordList	Research_Words_and_Materials				Synthetic genomics																										
+KeywordList	Research_Words_and_Materials				Terrific Broth																										
+KeywordList	Research_Words_and_Materials				Thymosin																										
+KeywordList	Research_Words_and_Materials				Tissue and organ harvesting																										
+KeywordList	Research_Words_and_Materials				Tissue cultures																										
+KeywordList	Research_Words_and_Materials				Tissue preservation																										
+KeywordList	Research_Words_and_Materials				Tissue scaffolds																										
+KeywordList	Research_Words_and_Materials				Toxoid																										
+KeywordList	Research_Words_and_Materials				Transgenic organism																										
+KeywordList	Research_Words_and_Materials				Trypsin																										
+KeywordList	Research_Words_and_Materials				Vaccination																										
+KeywordList	Research_Words_and_Materials				Vaccine																										
+KeywordList	Research_Words_and_Materials				Vacuum filtration																										
+KeywordList	Research_Words_and_Materials				Vertical electrophoresis																										
+KeywordList	Research_Words_and_Materials				Viral genome																										
+KeywordList	Research_Words_and_Materials				Viral isolate																										
+KeywordList	Research_Words_and_Materials				Viral replication																										
+KeywordList	Research_Words_and_Materials				Viroid																										
+KeywordList	Research_Words_and_Materials				Virulence																										
+KeywordList	Research_Words_and_Materials				Virulence plasmid																										
+KeywordList	Research_Words_and_Materials				Virus																										
+KeywordList	Research_Words_and_Materials				Yeast extract peptone broth agar																										
+KeywordList	Research_Words_and_Materials				Zoonosis																										
+KeywordList	Research_Words_and_Materials				Zoonotic																										
+KeywordList	Research_Words_and_Materials				Zooparasite																										
+KeywordList	Research_Words_and_Materials				Zootoxic																										
+KeywordList	Research_Words_and_Materials				Zymolysis flask																										
+KeywordList	Research_Words_and_Materials				Zymolysis vessel																										
+KeywordList	Research_Words_and_Materials				Zymosis																										
+KeywordList	Threat_Agents_and_Precursors	T1	T1		Abrin	Abrin toxin	Abrus precatorius	Jequirity	Jequirity pea	Rosary pea	Crab's eye	John Crow Bead	Precatory bean	Indian licorice	Saga tree	Giddee giddee	Jumbie bead														
+KeywordList	Threat_Agents_and_Precursors			T1	Acremonium maydis	Cephalosporium maydis	Late wilt of maize	Maize black bundle disease																							
+KeywordList	Threat_Agents_and_Precursors	T3	T3	T1	Aflatoxin	Dihydroaflatoxin B1	Dihydroaflatoxin G1	Aflatoxin B1	aflitoxin G1	Aflatoxicosis	Aspergillus flavus	Aspergillus parasiticus	Aspergillus flavus var. columnaris	Aspergillus sp. Lm	Aspergillus sp. S	Aspergillus sp. SB	Aspergillus sp. SBG														
+KeywordList	Threat_Agents_and_Precursors		T3		African horse sickness virus	AHSV	African horse sickness	Perdesiekte	Pestis Equorum	Peste Equina	Peste Equina Africana																				
+KeywordList	Threat_Agents_and_Precursors		T2		African swine fever virus	AFSV	African swine fever	Pesti Porcine Africaine	Peste Porcina Africana	Pestis Africana Suum	Maladie de Montgomery	Warthog Disease	Afrikaanse Varkpes	Afrikanische Schweinepest																	
+KeywordList	Threat_Agents_and_Precursors		T2		Akabane virus	Akabane	Congenital Arthrogryposis_Hydranencephaly Syndrome	Hydranencephaly Syndrome	A_H Syndrome	Akabane Disease	Congenital Bovine Epizootic A-H Syndrome	AcornCalves	Silly Calves	Curly Lamb Disease	Curly Calf Disease	Dummy Calf Disease															
+KeywordList	Threat_Agents_and_Precursors	T3	T3		Avian influenza virus highly pathogenic	HPAI	Avian influenza	Bird Flu	Avian Flu	Grippe Aviaire	Fowl plague																				
+KeywordList	Threat_Agents_and_Precursors	T1	T1		Bacillus anthracis	Bacterium anthracis	Bacillus cereus var. anthracis	B. anthracis	Anthrax bacterium	Bacteridium anthracis	Anthrax	Cutaneous anthrax	Pulmonary antrhax	Woolsorters? Disease	Cumberland Disease	Maladi Charbon	Malignant Pustule	Malignant Carbuncle	Milzbrand	Splenic Fever	Charbon	Rag-picker's disease									
+KeywordList	Threat_Agents_and_Precursors			T2	Banana bunchy top virus	Abaca bunchy top virus	BBTV	Banana bunchy top disease																							
+KeywordList	Threat_Agents_and_Precursors	T3			Bartonella quintana	Rochalimaea quintana	Rickettsia quintana	Trench fever	Shinbone fever	5 day fever	Wolhynia fever	Quintana fever	His-Werner disease																		
+KeywordList	Threat_Agents_and_Precursors		T2		Bluetongue virus exotic	Ovine Catarrhal Fever Virus	Blue Tongue	Bluetongue disease	Sore Muzzle	Pseudo Foot-and-Mouth Disease	Muzzle Disease																				
+KeywordList	Threat_Agents_and_Precursors	T1			Botulinum toxin	Botulinus toxin	Botulinum neurotoxin	Clostridium botulinum toxin	BoTox	BTX	BTXA	Dysport	Myobloc	Neurobloc	Xeomin	botulinus intoxication															
+KeywordList	Threat_Agents_and_Precursors		T3		Bovine leukemia virus	BLV	Bovine Leukosis	Lymphosarcoma	Malignant Lymphoma																						
+KeywordList	Threat_Agents_and_Precursors	T3	T3		Bovine spongiform encephalopathy agent	BSE	Bovine spongiform encephalopathy	BSE	Mad-cow disease	MCD	Creutzfeldt_Jakob disease																				
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Brucella abortus	Brucellosis	Bang's disease	Gibraltar fever	Malta fever	Maltese fever	Mediterranean fever	Rock fever	Undulant fever	Contagious abortion	Infectious abortion																
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Brucella melitensis	Brucella canis	Micrococcus melitensis	Cyprus fever	Relapsing fever	Swine brucellosis																					
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Brucella suis																										
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Burkholderia mallei	Pseudomonas mallei	Actinomyces mallei	Malleomyces mallei	Pfeifferella mallei	Acinetobacter mallei	Actinobacillus mallei	Bacillus mallei	Loefferella mallei	Glanders	Equinia	Farcy	Malleus														
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Burkholderia pseudomallei	Bacillus whitmori	Pfeifferella whitmori	Pfeifferella pseudomallei	Actinobacillus pseudomallei	Loefferella whitmori	Malleomyces pseudomallei	Pseudomonas pseudomallei	Melioidosis	Pseudoglanders	Vietnamese time bomb	Whitmore's disease															
+KeywordList	Threat_Agents_and_Precursors		T3		Camel pox virus	Camelpox virus	Camelpox																								
+KeywordList	Threat_Agents_and_Precursors			T1	Candidatus Liberobacter	Candidatus Liberobacter asiaticum	Candidatus Liberobacter africanum	Candidatus Liberibacter	Candidatus Liberibacter asiaticum	Candidatus Liberibacter africanum	Greening Disease	Citrus Greening	Huanglongbing	Citrus vein phloem degeneration	Citrus greening disease	Yellow shoot disease	Leaf mottle yellows	Citrus dieback													
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Central European Tick-borne encephalitis virus	Tick-borne encephalitis virus	Kumlinge virus	Flavivirus kumlinge	Central European encephalitis virus	Hanzalova virus	Hypr virus	Tick-borne encephalitis	Biphasic meningoencephalitis	Czechoslovak tick-borne encephalitis	Diphasic milk fever	Viral meningoencephalitis															
+KeywordList	Threat_Agents_and_Precursors	T3	T3		Cercopithecine herpesvirus 1	B virus	Cercopithecid herpesvirus 1	Herpesvirus simiae	Macacine herpesvirus 1	Simian herpesvirus B	Herpes B virus	Herpes virus B	Monkey B virus	Simian herpes B virus	SHBV																
+KeywordList	Threat_Agents_and_Precursors	T3			Chikungunya virus	CHIKV	Epidemic polyarthritis and rash	Chikungunya fever	CHIK																						
+KeywordList	Threat_Agents_and_Precursors	T3			Chlamydia psittaci	Chlamydiophila psittaci	Ehrlichia psittaci	C. psittaci	Rickettsia psittaci	Chlamydozoon psittaci	Rickettsiaformis psittacosi	Psittacosis	Parrot Fever	Chlamydiosis	Ornithosis																
+KeywordList	Threat_Agents_and_Precursors	T2			Cholera toxin																										
+KeywordList	Threat_Agents_and_Precursors		T1		Classical swine fever virus	Hog cholera virus	CSFV	Pestivirus type 2	HCV	Classic swine fever virus--Brescia	Hog cholera virus--Brescia	Hog cholera	Pig plague	HCV																	
+KeywordList	Threat_Agents_and_Precursors			T2	Clavibacter michiganensis subsp. Sepedonicus	Corynebacterium michiganensis subsp. Sepedonicum	Corynebacterium sepedonicum	Potato ring rot	Bacterial ring rot																						
+KeywordList	Threat_Agents_and_Precursors	T1	T1		Clostridium Botulinum	Bacillus botulinus	C. botulinum	Botulism																							
+KeywordList	Threat_Agents_and_Precursors	T3	T3		Clostridium perfringens	C. welchii	Enteritis necroticans	Clostridium plagarum	Bacterium welchii	Bacillus perfringens	Gas gangreene																				
+KeywordList	Threat_Agents_and_Precursors	T3	T3		Clostridium perfringens epsilon toxin	Epsilon toxin	Clostridium perfringens enteritis	Enterotoxemia																							
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Clostridium tetani	Tetanus	Lockjaw																								
+KeywordList	Threat_Agents_and_Precursors	T2			Coccidioides immitis	Coccidioidal granuloma	San Joaquin Valley fever	Valley fever																							
+KeywordList	Threat_Agents_and_Precursors	T2			Coccidioides posadasii	Coccidioidomycosis																									
+KeywordList	Threat_Agents_and_Precursors			T1	Cochliobolus miyabeanus	Ophiobolus sativus	Helminthosporium oryzae	Brown spot	Rice Brown Spot																						
+KeywordList	Threat_Agents_and_Precursors			T2	Colletotrichum coffeanum var. virulans	Colletotrichum kahawae	Coffee berry disease	Brown blight	Green berry anthracnose																						
+KeywordList	Threat_Agents_and_Precursors	T2			Conotoxin	Mu conotoxin	Alpha conotoxin	Omega conotoxin	Delta conotoxin	Kappa conotoxin	Conus species	Cone snail																			
+KeywordList	Threat_Agents_and_Precursors	T2	T3		Coxiella burnetii	Rickettsia diaporica	Rickettsia burneti	C. burnetii	Q fever	Nine Mile fever	North Queensland fever	Query fever	Balkan flu																		
+KeywordList	Threat_Agents_and_Precursors	T2	T3		Crimean-Congo hemorrhagic fever virus	Congo-Crimean hemorrhagic virus	CCHF Virus	CCHFV	Crimean-Congo hemorrhagic fever	Congo Fever	Central Asian Hemorrhagic Fever	Hungribta	Khunymuny	Karakhalak																	
+KeywordList	Threat_Agents_and_Precursors			T2	Cronartium flaccidum	Peridermium cornui	Sphaeria flaccida	Peridermium pini	Cronartium asclepiadeum	Cronartium paeoniae	Cronartium nemesiae	Cronartium pedicularis	Cronartium pini	Endocronartium pini	Erineum asclepiadeum	Uredo pedicularis	Lycoperdon pini	Caeoma pineum a. corticola	Peridermium pini b. truncicola	Peridermium truncicola	Aecidium pini	Scotch pine blister rust	Resin canker	Blister: pine rust	Resin: pine canker	Scots pine blister rust	Cronartium rust	Resin-top disease	Blister: Scotch pine rust	Resin top disease: pine	Stem: pine rust
+KeywordList	Threat_Agents_and_Precursors	T2	T3		Dengue fever virus	Dengue fever	Breakbone fever	Dengue shock syndrome	DSS																						
+KeywordList	Threat_Agents_and_Precursors			T2	Deuterophoma tracheiphila	Phoma tracheiphila	Mal secco	Malsecco																							
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Diacetoxyscirpenol toxin	Sesquiterpene																									
+KeywordList	Threat_Agents_and_Precursors	T2	T3		Dobrava virus	Dobrava-Belgrade virus																									
+KeywordList	Threat_Agents_and_Precursors	T2			Eastern Equine Encephalitis virus	EEEV	Eastern Equine Encephalitis																								
+KeywordList	Threat_Agents_and_Precursors	T2	T3		Ebola virus	EBOV	Zaire virus	Ebola hemorrhagic fever	EHF																						
+KeywordList	Threat_Agents_and_Precursors		T2		Ehrlichia ruminantium	Cowdria ruminantium	Rickettsia ruminantium	E. ruminantium	Kurlovia ruminantium	Heartwater rickettsia	Nicollea ruminantium	C. ruminantium	Heartwater	Cowdriosis																	
+KeywordList	Threat_Agents_and_Precursors	T3	T3		Escherichia coli	Enterohemorrhagic serotype O157 and other verotoxin producing serotypes	Enterohemorrhagic Escherichia coli	EHEC	Verotoxin producing Escherichia coli	VTEC	Shiga toxin producing Escherichia coli	STEC	Hemolytic-uremic syndrome	HUS	E. coli																
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Far Eastern Tick-borne encephalitis virus	Tick-borne encephalitis far eastern subtype																									
+KeywordList	Threat_Agents_and_Precursors	T2			Flexal virus	Influenza-like illness																									
+KeywordList	Threat_Agents_and_Precursors		T1		Foot-and-mouth disease virus	Fiebre Aftosa	Aphthovirus	FMDV	Hoof and mouth disease virus	Foot-and-mouth disease	FMD	hoof-and-mouth disease																			
+KeywordList	Threat_Agents_and_Precursors	T1	T2		Francisella tularensis	Pasteurella tularensis	Bacterium tularense	Brucella tularensis	F. tularensis	B. tularensis	P. tularensis	Tularemia	Rabbit fever	Deer-fly fever	O'Hara disease	Francis disease															
+KeywordList	Threat_Agents_and_Precursors		T2		Goat pox virus	Capripoxvirus Infection	Sheep and Goat pox																								
+KeywordList	Threat_Agents_and_Precursors	T2			Guanarito virus	Guanarito arenavirus	Venezuelan hemorrhagic fever	VHF																							
+KeywordList	Threat_Agents_and_Precursors	T2			Hantaan virus	HTNV	Korean hemorrhagic fever virus	Hantaan hemorrhagic fever	Korean hemorrhagic fever with renal syndrome	HFRS	Hemorrhagic nephrosonephritis	Epidemic hemorrhagic fever	Hantavirus pulmonary syndrome	HPS	Hantaan fever																
+KeywordList	Threat_Agents_and_Precursors	T2	T3		Hendra virus	Equine morbillivirus	Hendra	Hendra virus disease	Acute Equine Respiratory Syndrome																						
+KeywordList	Threat_Agents_and_Precursors	T3			Hepatitis A virus	Hepatitis A	Infectious hepatitis																								
+KeywordList	Threat_Agents_and_Precursors	T3	T3		Histoplasma capsulatum	Histoplasmosis	Darling's disease	African histoplasmosis																							
+KeywordList	Threat_Agents_and_Precursors	T2	T2		HT-2 toxin	Trichothecene mycotoxins	Trichothecenes	Fusarium tricinctum																							
+KeywordList	Threat_Agents_and_Precursors	T3			Human immunodeficiency virus HIV types 1 and 2	AIDS																									
+KeywordList	Threat_Agents_and_Precursors	T3			Human T cell lymphotropic virus HTLV types 1 and 2	T-cell leukemia	T-cell lymphoma																								
+KeywordList	Threat_Agents_and_Precursors	T2			Influenza virus	1918 pandemic strain	Influenzavirus	Spanish flu	Hong kong flu	Grippe																					
+KeywordList	Threat_Agents_and_Precursors	T2	T3		Japanese encephalitis virus	Arbovirus B	Mosquito_borne Encephalitis Virus	JEV	Japanese encephalitis																						
+KeywordList	Threat_Agents_and_Precursors	T2			Junin virus	Junin arenavirus	Argentine hemorrhagic fever	AHF																							
+KeywordList	Threat_Agents_and_Precursors	T2			Kyasanur Forest disease virus	KFD	Kyasanur Forest disease																								
+KeywordList	Threat_Agents_and_Precursors	T2			Lassa fever virus	Lassa	Lassa fever																								
+KeywordList	Threat_Agents_and_Precursors	T2			Legionella pneumophila	Legionellosis	Legionnaires' disease	Pontiac fever																							
+KeywordList	Threat_Agents_and_Precursors	T2			Leptospira alexanderi	Leptospira genomospecies 2																									
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Leptospira borgpetersenii	Leptospirosis																									
+KeywordList	Threat_Agents_and_Precursors	T2			Leptospira interrogans																										
+KeywordList	Threat_Agents_and_Precursors	T2	T3		Leptospira kirschneri																										
+KeywordList	Threat_Agents_and_Precursors	T2			Leptospira noguchii	Fort Bragg Fever																									
+KeywordList	Threat_Agents_and_Precursors	T2	T3		Leptospira santarosai																										
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Leptospira weilii																										
+KeywordList	Threat_Agents_and_Precursors		T2		Louping ill virus	Louping-ill	Ovine Encephalomyelitis	Infectious Encephalomyelitis of Sheep	Trembling-ill																						
+KeywordList	Threat_Agents_and_Precursors		T3		Lumpy skin disease virus	LSDV	Neethling	Lumpy skin disease	LSD	Knopvelsiekte																					
+KeywordList	Threat_Agents_and_Precursors	T3			Lymphocytic choriomeningitis virus	LCMV	Lymphocytic choriomeningitis	LCM	Armstrong?s Disease	Benign lymphocytic meningitis	Lymphocytic meningoencephalitis	Serous lymphocytic meningitis																			
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Lyssavirus	Australian bat lyssavirus	Duvenhage virus	European bat lyssavirus 1	European bat lyssavirus 2	Lagos bat virus	Mokola virus	Rabies virus	Rabies	Lyssavirus encephalitis																	
+KeywordList	Threat_Agents_and_Precursors	T2			Machupo virus	MACV	Bolivian hemorrhagic fever	BHF	black typhus	Ordog Fever																					
+KeywordList	Threat_Agents_and_Precursors			T1	Magnaporthe grisea	Pyricularia grisea	Magnaporthe poae	Pyricularia oryzae	Trichothecium griseum	Rice blast fungus	Rice blast	Panicle blast	Rotten neck	Rice rotten neck	Rice seedling blight	Blast of rice	Oval leaf spot of graminea	Pitting disease	Ryegrass blast	Johnson spot											
+KeywordList	Threat_Agents_and_Precursors		T2		Malignant catarrhal fever virus	Ovine herpesvirus 2	Wildebeest herpesvirus	Alcelaphine herpesvirus-1	Malignant Catarrh	Malignant Head Catarrh	Gangrenous Coryza	Snotsiekte	Bovine malignant catarrhal fever	BMCF	Catarrhal Fever																
+KeywordList	Threat_Agents_and_Precursors	T2			Marburg virus	Marburgvirus	MBG	Lake Victoria marburgvirus	Marburg Hemorrhagic Fever	MHF	Marburg Virus Disease	Marburg fever	African Hemorrhagic Fever	Green monkey disease																	
+KeywordList	Threat_Agents_and_Precursors		T2		Marek's disease virus	Marek's disease																									
+KeywordList	Threat_Agents_and_Precursors	T3	T3		Menangle virus	MenV																									
+KeywordList	Threat_Agents_and_Precursors			T2	Microcyclus ulei	Microcystis ulei	Aphosphaeria ulei	Dothidella ulei	Fusicladium ulei	South American leaf blight																					
+KeywordList	Threat_Agents_and_Precursors	T3	T3	T2	Microcystin	Cyanotoxin																									
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Modeccin toxin	Modecca digitata																									
+KeywordList	Threat_Agents_and_Precursors			T2	Monilia rorei	Moniliophthora roreri	Monilia Pod Rot	Pod rot of cacao																							
+KeywordList	Threat_Agents_and_Precursors			T3	Monilinia fructicola	Brown Rot																									
+KeywordList	Threat_Agents_and_Precursors	T3			Monkeypox virus	MPXV	Monkeypox																								
+KeywordList	Threat_Agents_and_Precursors	T3			Murray Valley encephalitis virus	MVEV	Murray Valley encephalitis	Australian encephalitis																							
+KeywordList	Threat_Agents_and_Precursors	T3	T3		Mycobacterium avium	Mycobacterium avium subspecies avium	Mycobacterium avium subspecies hominis	Mycobacterium avium subspecies paratuberculosis	Tuberculosis avian	Avian Tuberculosis																					
+KeywordList	Threat_Agents_and_Precursors	T3	T2		Mycobacterium bovis	Bovine tuberculosis																									
+KeywordList	Threat_Agents_and_Precursors	T2			Mycobacterium tuberculosis	Tuberculosis																									
+KeywordList	Threat_Agents_and_Precursors		T2		Mycoplasma capricolum subspecies capripneumoniae	Mycoplasma capricolum subspecies capri pneumoniae	MCCP	Contagious caprine pleuropneumonia	CCPP																						
+KeywordList	Threat_Agents_and_Precursors		T2		Mycoplasma gallisepticum	Mycoplasmosis																									
+KeywordList	Threat_Agents_and_Precursors		T3		Mycoplasma mycoides subspecies mycoides	Fowlpest	Pseudofowlpest	Contagious bovine pleuropneumonia	CBPP	Mycoplasmal pneumonia																					
+KeywordList	Threat_Agents_and_Precursors		T2		Newcastle disease virus	NDV	Newcastle disease	Avian Paramyxovirus-1 Infection	Goose Paramyxovirus Infection																						
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Nipah virus	Acute equine respiratory virus	Paramyxovirinae Henipavirus	Nipah virus encephalitis	Equine morbillivirus pneumonia	Porcine Respiratory and Encephalitis Syndrome	Porcine Respiratory and Neurologic Syndrome	Barking Pig Syndrome																			
+KeywordList	Threat_Agents_and_Precursors	T2	T3		Omsk Hemorrhagic Fever virus	OMSKV	Tick-borne encephalitus virus complex of the flaviviridae	Omsk hemorrahgic fever																							
+KeywordList	Threat_Agents_and_Precursors	T3			Orientia tsutsugamushi	Rickettsia tsutsugamushi	Scrub typhus	Shichit_ fever	Hatsuka fever																						
+KeywordList	Threat_Agents_and_Precursors	T2			Oropouche virus	OROV	Oropouche fever																								
+KeywordList	Threat_Agents_and_Precursors		T3		Pasteurella multocida type B	Porcine pneumonia	Swine pneumonia																								
+KeywordList	Threat_Agents_and_Precursors			T1	Peronosclerospora philippinensis	P. philippinesis	Sclerospora philippensis	Sclerophthora rayssiae var zeae	Sclerophthora rayssia	Philippine downy mildew	Sugarcane downy mildew	Philippine downy mildew of maize	PDM	Philippine downy mildew of corn	BSDM	Brown Stripe Mildew	PDM	Brown Stripe Downy Mildew of Corn													
+KeywordList	Threat_Agents_and_Precursors		T2		Peste des petits ruminants virus	Ovine rinderpest	Pseudorinderpest	Pest of Small Ruminants	Goat Plague	Pest of Sheep and Goats	Kata	Pneumoenteritis Complex	Peste-des-petits-ruminants																		
+KeywordList	Threat_Agents_and_Precursors			T1	Phoma glycinicola	Pyrenochaeta glycines	Pyrenochaeta leaf spot	Dactuliophora leaf spot	Pyrenochaeta leaf blotch	Red leaf blotch of soybean																					
+KeywordList	Threat_Agents_and_Precursors			T2	Phytophthora kernoviae	Phytophthora taxon C																									
+KeywordList	Threat_Agents_and_Precursors			T2	Potato Andean latent tymovirus	Andean potato latent virus	Potato Andean latent virus	APLV																							
+KeywordList	Threat_Agents_and_Precursors			T2	Potato spindle tuber viroid	PSTV	PSTVd	Potato spindle tuber disease																							
+KeywordList	Threat_Agents_and_Precursors	T2			Powassan virus	POWV	Tick-borne powassan virus	Tick-borne flaviviruses	Powassan Encephalitis																						
+KeywordList	Threat_Agents_and_Precursors			T1	Puccinia graminis	Stem Rust	Black rust	Cereal rust																							
+KeywordList	Threat_Agents_and_Precursors			T1	Puccinia striiformis	Stripe rust																									
+KeywordList	Threat_Agents_and_Precursors	T2			Puumala virus	Nephropathia epidemica																									
+KeywordList	Threat_Agents_and_Precursors			T2	Ralstonia solanacearum	R. solanacearu	Burkholderia solanacearum	Pseudomonas solanacearum	Bacterial Wilt	Brown Rot of Potato	Bacterial Wilt of Potato	Bacterial Wilt of Tomato	Southern wilt	Granville wilt																	
+KeywordList	Threat_Agents_and_Precursors		T2	T3	Rathayibacter toxicus	Clavibacter toxicus	Gumming disease	Gumming disease of grasses																							
+KeywordList	Threat_Agents_and_Precursors	T1	T1		Ricin	Ricinus communis lectin	Ricinus communis	Castor beans																							
+KeywordList	Threat_Agents_and_Precursors	T2			Rickettsia akari	Rickettsialpox	Rikettsial pox																								
+KeywordList	Threat_Agents_and_Precursors	T2			Rickettsia australis	Queensland tick typhus																									
+KeywordList	Threat_Agents_and_Precursors	T2			Rickettsia canada	Rickettsia canadensis	New typhus																								
+KeywordList	Threat_Agents_and_Precursors	T2			Rickettsia conorii	Boutonneuse fever																									
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Rickettsia prowazekii	Rickettsia prowazekii da Rocha-Lima 1916	R. prowazekii	Epidemic typhus	Brill-Zinsser disease	Pediculus humanus corporis	Louse-borne typhus	Classic typhus	Sylvatic typhus	Flea-borne typhus	Murine typhus	Rat typhus	Classic epidemic typhus	Human typhus													
+KeywordList	Threat_Agents_and_Precursors	T2			Rickettsia rickettsii	Dermacentroxenus rickettsii	RMSF	Spotted fever	New World spotted fever	Sao Paulo fever	Rocky Mountain spotted fever																				
+KeywordList	Threat_Agents_and_Precursors	T2			Rickettsia siberica	Siberian tick typhus																									
+KeywordList	Threat_Agents_and_Precursors	T2			Rickettsia typhi	Rickettsia mooseri	Murin typhus																								
+KeywordList	Threat_Agents_and_Precursors	T3	T2		Rift Valley fever virus	RVFV	Rift Valley fever	RFV	Infectious Enzootic Hepatitis of Sheep and Cattle																						
+KeywordList	Threat_Agents_and_Precursors		T2		Rinderpest virus	RPV	RV	Cattle plague	Steppe murrain																						
+KeywordList	Threat_Agents_and_Precursors	T2			Rocio virus	Rocio virus encephalitis																									
+KeywordList	Threat_Agents_and_Precursors	T2			Russian Spring and Summer encephalitis virus	RSSEV	Russian Spring-Summer encephalitis virus	Russian Spring and Summer encephalitis	RSSE	Taiga encephalitis																					
+KeywordList	Threat_Agents_and_Precursors	T2			Sabia virus	Sabia arenavirus	Brazilian hemorrhagic fever																								
+KeywordList	Threat_Agents_and_Precursors	T2			Salmonella enterica Serovar typhi	S. enterica serovar Typhi	Salmonella enterica ser. typhi	Salmonella enterica serotype Typhi	Salmonella choleraesuis typhi	Salmonella choleraesuis serovar Typhi	Salmonella enterica serovar Typhi	Typhusbacillen	Bacterium typhosum	Bacillus typhosus	Bacillus typhus	Bacillus typhi abdominalis	Bacillus typhicus	Bacterium typhi	Acystia typhi	Bacterium Eberthella typhi	Eberthus typhosus	Eberthella typhi	Eberthella typhosa	Salmonella typhi	Salmonella typhosus	Typhus Typhus	Salmonella typhosa	Salmonella Typhimurium	Typhoid fever		
+KeywordList	Threat_Agents_and_Precursors		T2		Salmonella gallinarum	Food typhoid																									
+KeywordList	Threat_Agents_and_Precursors		T2		Salmonella pullorum	Pullorum disease																									
+KeywordList	Threat_Agents_and_Precursors	T2			Saxitoxin	Paralytic shellfish poisoning	PSP	Dinoflagellates	Cyanobacteria	Alexandrium sp.	Gymnodinium sp.	Pyrodinium sp.	Anabaena sp.	Aphanizomenon spp.	Cylindrospermopsis sp.	Lyngbya sp.	Planktothrix sp.														
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Semliki Forest virus	SFV																									
+KeywordList	Threat_Agents_and_Precursors	T2			Seoul virus	SEOV	Hemorrhagic fever with Renal Syndrome	Epidemic nephritis	Nephropathica epidemica	Songo fever																					
+KeywordList	Threat_Agents_and_Precursors	T3		T2	Serratia marcescens	White Pox																									
+KeywordList	Threat_Agents_and_Precursors		T2		Sheep pox virus	Capripoxvirus	Sheep pox																								
+KeywordList	Threat_Agents_and_Precursors	T2			Shiga-like ribosome inactivating proteins	Shiga-like toxin	Verotoxin																								
+KeywordList	Threat_Agents_and_Precursors	T2			Shigatoxin																										
+KeywordList	Threat_Agents_and_Precursors	T2			Shigella dysenteriae	Shigella shigae	Eberthella dysenteriae	Bacillus shigae	Bacillus dysenteriae	Bacillus dysentericus	Shigella shiga	Shigella shigella	Schmidt's bacillus	Shigellosis	Bacillary dysentery	S. dysenteriae															
+KeywordList	Threat_Agents_and_Precursors	T2			Sin Nombre virus	Monongahela virus	Blue River virus - Indiana																								
+KeywordList	Threat_Agents_and_Precursors	T2			St Louis encephalitis virus	SLEV	St. Louis Encephalitis																								
+KeywordList	Threat_Agents_and_Precursors	T2			Staphylococcal enterotoxins	Staphylococcus aureus enterotoxin	SEB	Staphylococcal pyrogenic exotoxin B	Staphylococcus aureus																						
+KeywordList	Threat_Agents_and_Precursors		T2		Suid herpesvirus 1	Porcine herpesvirus 1	Alphaherpesvirus pseudorabies virus	PRV	Aujeszky's disease virus	Pseudorabies Virus	Suid herpesvirus type 1	Aujeszky's disease	Pseudorabies																		
+KeywordList	Threat_Agents_and_Precursors		T2		Swine vesicular disease virus	SVDV	Swine vesicular disease	Porcine Enterovirus Infection																							
+KeywordList	Threat_Agents_and_Precursors			T2	Synchytrium endobioticum	Chrysophlyctis endobiotica	Synchytrium solani	Potato wart disease	Black scab	Potato canker																					
+KeywordList	Threat_Agents_and_Precursors	T2	T2		T-2 toxin	Fusariotoxin T 2	Insariotoxin	Mycotoxin T 2	NSC 138780	T 2 mycotoxin	Trichothecen mycotoxins	Alimentary toxic aleukia	Fusarium sporotrichoides																		
+KeywordList	Threat_Agents_and_Precursors		T2		Teschen disease virus	Poliomyelitis suum	Porcine enterovirus 1	PEV	PEV-1	Teschen disease	Talfan disease	Benign enzootic paresis	Porcine enterovirus encephalomyelitis																		
+KeywordList	Threat_Agents_and_Precursors	T2			Tetanus toxin																										
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Tetrodotoxin	Anhydrotetrodotoxin	Araregai toxin	4-Epitetrodotoxin	Maculotoxin	Spheroidine	Tarichatoxin	Tetrodonic acid	(-)- Tetrodotoxin	TTX	Puffer fish poisoning	Fugu poisoning	Tetradon poisoning	Pseudoalteromonas tetraodonis													
+KeywordList	Threat_Agents_and_Precursors	T2			Variola major virus	Smallpox	Variola major smallpox	Classical smallpox																							
+KeywordList	Threat_Agents_and_Precursors	T3			Variola minor virus	Alastrim	Mild smallpox-like disease																								
+KeywordList	Threat_Agents_and_Precursors	T3	T3		Venezuelan Equine Encephalitis virus	VEEV	Venezuelan Equine Encephalitis	Venezuelan Equine Encephalomyelitis	VEE	Peste Loca	Venezuelan Encephalitis	Venezuelan Equine Fever																			
+KeywordList	Threat_Agents_and_Precursors	T3	T2		Vesicular stomatitis virus exotic subtype VSV-IN2	VSV	Indiana Fever	Sore Mouth of Cattle and Horses																							
+KeywordList	Threat_Agents_and_Precursors		T2		Vesicular stomatitis virus exotic subtype VSV-IN3	Alagoas virus	VSV																								
+KeywordList	Threat_Agents_and_Precursors	T2	T3		Vibrio cholerae	V. cholerae	Vibrio cholerae-asiaticae	Bacillus cholerae-asiaticae	Vibrio cholera	Kommabacillus	Cholera	Vibrio comma																			
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Viscumin	Mistletoe lectin I	ML-I	Viscum album lectin 1	Viscum Album	Mistletoe																					
+KeywordList	Threat_Agents_and_Precursors	T2	T2		Volkensin toxin	Adenia volkensii	Kilyambiti plant																								
+KeywordList	Threat_Agents_and_Precursors	T3			Western equine encephalitis virus	WEEV	Western equine encephalitis	WEE	Western Equine Encephalomyelitis																						
+KeywordList	Threat_Agents_and_Precursors			T2	Xanthomonas albilineans	Agrobacterium albilineans	Bacterium albilineans	Phytomonas albilineans	Pseudomonas albilineans	Leaf scald disease	Sugarcane Leaf Scald Disease																				
+KeywordList	Threat_Agents_and_Precursors			T1	Xanthomonas campestris pv. citri	Bacillus campestris	Bacterium campestres	Phytomonas campestris	Pseudomonas campestris	Xanthomonas citri	Citrus canker	Asiatic citrus canker or cancrosis A	False citrus canker	Cancrosis B	Mexican lime cancrosis	Cancrosis C															
+KeywordList	Threat_Agents_and_Precursors			T1	Xanthomonas oryzae pathovar oryzae	Pseudomonas oryzae	Bacterial leaf blight of rice	Rice leaf streak	Bacterial leaf streak of rice	Bacterial leaf streak																					
+KeywordList	Threat_Agents_and_Precursors			T1	Xanthomonas oryzae pathovar oryzicola																										
+KeywordList	Threat_Agents_and_Precursors			T1	Xylella fastidiosa	Xylella fastidiosa citrus variegated chlorosis strain	Citrus Chlorosis	Citrus Variegated Chlorosis	Phoney peach disease	Oleander leaf scorch	Almond leaf scorch	Pierce's disease	Plum leaf scald																		
+KeywordList	Threat_Agents_and_Precursors	T2			Yellow fever virus	VFV	Flavivirus febricis	Yellow fever	Jungle yellow fever	Sylvatic yellow fever	Urban yellow fever	Vomito negro	Yellow Jack																		
+KeywordList	Threat_Agents_and_Precursors	T1			Yersinia pestis	Y. pestis	Yersinia pseudotuberculosis subsp. Pestis	Bacterium pestis	Bacillus pestis	Pasteurella pestis	Pestisella pestis	Plague	Bubonic plague	Pneumonic plague	Black Death	The Great Dying	Pestilence	Sylvatic plague	Urban plague	Septicemic plague											
+KeywordList	Threat_Agents_and_Precursors	T3			Yersinia pseudotuberculosis	Lzumi-fever	Yersiniosis																								
+KeywordList	Sensitive_Countries				Iran	IR	IRN																								
+KeywordList	Sensitive_Countries				Pakistan	PK	PAK																								
+KeywordList	Sensitive_Countries				Syria	SY	SYR																								
+KeywordList	Sensitive_Countries				Afghanistan	AF	AFG																								
+KeywordList	Sensitive_Countries				China	CN	CHN																								
+KeywordList	Sensitive_Countries				Cuba	CU	CUB																								
+KeywordList	Sensitive_Countries				Egypt	EG	EGY																								
+KeywordList	Sensitive_Countries				India	IN	IND																								
+KeywordList	Sensitive_Countries				Iraq	IQ	IRQ																								
+KeywordList	Sensitive_Countries				Israel	IL	ISL																								
+KeywordList	Sensitive_Countries				North Korea	KP	PRK																								
+KeywordList	Sensitive_Countries				Russia	RU	RUS																								
+KeywordList	Sensitive_Countries				Somalia	SO	SOM																								
+KeywordList	Sensitive_Countries				South Africa	ZA	ZAF																								
+KeywordList	Sensitive_Countries				Yemen	YE	YEM																								
+KeywordList	Sensitive_Countries				Algeria	DZ	DZA																								
+KeywordList	Sensitive_Countries				Indonesia	ID	IDN																								
+KeywordList	Sensitive_Countries				Kazakhstan	KZ	KAZ																								
+KeywordList	Sensitive_Countries				Lebanon	LB	LBN																								
+KeywordList	Sensitive_Countries				Libya	LY	LBY																								
+KeywordList	Sensitive_Countries				Philippines	PH	PHL																								
+KeywordList	Sensitive_Countries				Saudi Arabia	SA	SAU																								
+KeywordList	Sensitive_Countries				Sudan	SD	SDN																								
+KeywordList	Sensitive_Countries				Taiwan	TW	TWN																								
+KeywordList	Sensitive_Countries				Tajikistan	TJ	TJK																								
+KeywordList	Sensitive_Countries				Venezuela	VE	VEN																								

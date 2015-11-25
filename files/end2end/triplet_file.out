@@ -1,0 +1,13 @@
+Peptide::KeywordList::Research_Words_and_Materials -> Metabolism::Subject:: (hasWeakTie, 16.33572171803757)
+
+Metabolism::Subject:: -> 22933116::Record:: (recordEntity, 46.45294847430043)
+
+Metabolism::Subject:: -> Peptide::KeywordList::Research_Words_and_Materials (hasWeakTie, 16.33572171803757)
+
+Metabolism::Subject:: -> Quantitative PCR::KeywordList::Research_Words_and_Materials (hasWeakTie, 24.24693541823848)
+
+22933116::Record:: -> Metabolism::Subject:: (recordEntity, 46.45294847430043)
+
+Metabolism::Subject:: -> 22933116::Record:: (describes, 46.45294847430043)
+
+Quantitative PCR::KeywordList::Research_Words_and_Materials -> Metabolism::Subject:: (hasWeakTie, 24.24693541823848)

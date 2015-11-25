@@ -17,6 +17,8 @@ public class Test23ServiceImpl implements Test23Service {
 
 	public static String responseDir = "/Users/8xo/software/code-int/production/vvuq/";
 	public static String responseFileName = responseDir + "response.txt";
+	public static String responseDir2 = System.getProperty("user.dir");
+	public static String responseFileName2 = responseDir2 + "/files/end2end/" + "end2end_output.txt";
 	
 	
     private static Map<String, Test23Response> test23ResponseMap;
@@ -24,8 +26,10 @@ public class Test23ServiceImpl implements Test23Service {
     public Test23ServiceImpl() {
     	test23ResponseMap = new HashMap<String,Test23Response>();
         
-        List<Test23Response> examples = getFromFile();//getExamples();
+        //List<Test23Response> examples = getFromFile();//getExamples();
         
+    	List<Test23Response> examples = getFromFile2();
+    	
         for(int i=0;i<examples.size();i++) {
         	test23ResponseMap.put(examples.get(i).getName(), examples.get(i));
         }
@@ -60,6 +64,56 @@ public class Test23ServiceImpl implements Test23Service {
 		
 	}
     
+    
+    
+    public static List<Test23Response> getFromFile2() {
+
+    	Map<String,Test23Response> map = new HashMap<String,Test23Response>();
+		List<Test23Response> responses = new ArrayList<Test23Response>();
+		
+    	try {
+    		boolean inResults = false;
+			for (String line : Files.readAllLines(Paths.get(responseFileName2))) {
+				Test23Response response = new Test23Response();
+				if(line.contains("XXXXX")) {
+					inResults = !inResults;
+					//System.out.println("line: " + line);
+				}
+				if(inResults) {
+					//System.out.println("consume line: " + line);
+					String [] arr = line.split("\\|");
+					if(arr.length != 1) {
+
+						//System.out.println("line: " + line);
+						//System.out.println(arr.length);
+						response.setName(arr[0]);
+						response.setType(arr[1]);
+						Double value = Double.parseDouble(arr[2]);
+						arr[2] = Double.toString(round(value,3));
+						response.setTotal_score(arr[2]);
+						response.setDissemination_equipment(arr[3]);
+						response.setPostproduction_equipment(arr[4]);
+						response.setResearch_words_and_materials(arr[5]);
+						String [] keywords = new String[arr.length-1-5];
+						int j = 0;
+						for(int i=6;i<arr.length;i++) {
+							keywords[j] = arr[i];
+							j++;
+						}
+						response.setKeywords(keywords);
+						map.put(response.getName(), response);
+						responses.add(response);
+					}
+				}
+			}
+    	}catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+    	
+    	
+    	return responses;
+    }
     
     public List<Test23Response> getFromFile() {
     	
@@ -139,11 +193,31 @@ public class Test23ServiceImpl implements Test23Service {
         return examples;
     }
 	
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        long tmp = Math.round(value);
+        return (double) tmp / factor;
+    }
 }
 
 
 
-
+/*
+public static void main(String [] args) {
+	
+	System.out.println("Working Directory = " +
+            System.getProperty("user.dir"));
+	
+	List<Test23Response> responses = getFromFile2();
+	
+	//System.out.println("responses: " + responses.size() + " " + responses);
+	
+	
+}
+*/
 
 /*
 public static void main(String [] args) {
