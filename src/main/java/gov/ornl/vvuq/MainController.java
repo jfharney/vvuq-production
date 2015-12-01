@@ -143,8 +143,8 @@ public class MainController {
     	response.setNumRows("N/A");
     	String [] keywordSets = {"Dissemination-Equipment","Post-Production-Equipment","Research_Words_and_Materials"};
     	response.setKeywordSets(keywordSets);
-    	response.setQueryTime("N/A");
-    	response.setEtlTime("N/A");
+    	response.setQueryTime("15-25min");
+    	response.setEtlTime("65-75min");
     	
     	return new ResponseEntity<Test21Response>(response,
                 HttpStatus.OK);
@@ -180,11 +180,11 @@ public class MainController {
 			for (String line : Files.readAllLines(Paths.get(responseFileName2))) {
 				
 				Test23Response response = new Test23Response();
-				System.out.println("line: " + line);
+				////System.out.println("line: " + line);
 				String [] arr = line.split(" ");
 				StringTokenizer tokens = new StringTokenizer(line);
-				System.out.println(tokens.countTokens());
-				//System.out.println(arr.length);
+				////System.out.println(tokens.countTokens());
+				//////System.out.println(arr.length);
 				
 			}
     	}catch(Exception e) {
@@ -200,7 +200,7 @@ public class MainController {
     public ResponseEntity<Collection<Greeting>> getKeywordSets() {
 
     	
-    	System.out.println("In keywordset service");
+    	//System.out.println("In keywordset service");
     	
     	
     	
@@ -219,7 +219,7 @@ public class MainController {
     public ResponseEntity<Collection<Greeting>> getGreetings() {
 
     	
-    	System.out.println("In service");
+    	//System.out.println("In service");
     	
         Collection<Greeting> greetings = greetingService.findAll();
 
@@ -236,21 +236,21 @@ public class MainController {
     	boolean isSelected = false;
     	for(int i=0;i<all_keywords.length;i++) {
 
-    		//System.out.println("i: " + i + " keyword: " + all_keywords[i]);
+    		////System.out.println("i: " + i + " keyword: " + all_keywords[i]);
     		
     		for(int j=0;j<selected_keywords.length;j++) {
-    			//System.out.println("\tSel: " + selected_keywords[j] + " all: " + all_keywords[i] + " " + (selected_keywords[j].equals(all_keywords[i])));
+    			////System.out.println("\tSel: " + selected_keywords[j] + " all: " + all_keywords[i] + " " + (selected_keywords[j].equals(all_keywords[i])));
     			if(selected_keywords[j].equals(all_keywords[i])) {
     				isSelected = true;
     			}
     		}
-    		//System.out.println("Isselected: " + isSelected);
+    		////System.out.println("Isselected: " + isSelected);
     		if(!isSelected) {
     			unselected_keywords_vector.addElement(all_keywords[i]);
     		}
     		isSelected = false;
     	}
-    	//System.out.println(unselected_keywords_vector);
+    	////System.out.println(unselected_keywords_vector);
     	String [] unselected_keywords = new String [unselected_keywords_vector.size()];
     	for(int i=0;i<unselected_keywords.length;i++) {
     		unselected_keywords[i] = unselected_keywords_vector.get(i);
@@ -316,14 +316,14 @@ public class MainController {
     	String name = test3Request.getName();
     	
 		
-		//System.out.println("Test 3 Launch ");
-		//System.out.println("Number of selected eywords given " + selected_keywords.length);
+		////System.out.println("Test 3 Launch ");
+		////System.out.println("Number of selected eywords given " + selected_keywords.length);
 		for(int i=0;i<selected_keywords.length;i++) {
-			//System.out.println("selected key word: " + i + " " + selected_keywords[i]);
+			////System.out.println("selected key word: " + i + " " + selected_keywords[i]);
 		}
 		String [] unselected_keywords = this.keywordHelper(selected_keywords, all_keywords);
 		for(int i=0;i<unselected_keywords.length;i++) {
-			//System.out.println("unselected key word: " + i + " " + unselected_keywords[i]);
+			////System.out.println("unselected key word: " + i + " " + unselected_keywords[i]);
 		}
 		
 		
@@ -343,7 +343,7 @@ public class MainController {
 		if(r_all_double > (r_selected_double + r_unselected_double)) {
 			test3 = false;
 		}
-		//System.out.println("test3 " + test3);
+		////System.out.println("test3 " + test3);
 
 		String r_selected = Double.toString(r_selected_double);
 		String r_unselected = Double.toString(r_unselected_double);

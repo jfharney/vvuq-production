@@ -65,7 +65,7 @@ public class Test23ServiceImpl implements Test23Service {
 	
     public Map<String, Test23Response> getTest23ResponseMap() {
 		if(this.test23ResponseMap == null) {
-			System.out.println("Is null????");
+			//System.out.println("Is null????");
 			return null;
 		} else {
 			return this.test23ResponseMap;
@@ -86,15 +86,15 @@ public class Test23ServiceImpl implements Test23Service {
 				Test23Response response = new Test23Response();
 				if(line.contains("XXXXX")) {
 					inResults = !inResults;
-					//System.out.println("line: " + line);
+					////System.out.println("line: " + line);
 				}
 				if(inResults) {
-					//System.out.println("consume line: " + line);
+					////System.out.println("consume line: " + line);
 					String [] arr = line.split("\\|");
 					if(arr.length != 1) {
 
-						//System.out.println("line: " + line);
-						//System.out.println(arr.length);
+						////System.out.println("line: " + line);
+						////System.out.println(arr.length);
 						response.setName(arr[0]);
 						response.setType(arr[1]);
 						Double value = Double.parseDouble(arr[2]);
@@ -146,13 +146,13 @@ public class Test23ServiceImpl implements Test23Service {
 				String [] arr = line.split("\\|");
 				if(arr.length != 1) {
 
-					//System.out.println("line: " + line);
-					//System.out.println(arr.length);
+					////System.out.println("line: " + line);
+					////System.out.println(arr.length);
 					response.setName(arr[0]);
 					response.setType(arr[1]);
 					Double value = Double.parseDouble(arr[2]);
 					arr[2] = Double.toString(round(value,5));
-					System.out.println("arr[2]: " + arr[2]);
+					//System.out.println("arr[2]: " + arr[2]);
 					response.setTotal_score(arr[2]);
 					response.setDissemination_equipment(arr[3]);
 					response.setPostproduction_equipment(arr[4]);
@@ -169,7 +169,7 @@ public class Test23ServiceImpl implements Test23Service {
 				}
 				
 			}
-			System.out.println(map);
+			//System.out.println(map);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -189,8 +189,8 @@ public class Test23ServiceImpl implements Test23Service {
 				String [] arr = line.split("\\|");
 				if(arr.length != 1) {
 
-					//System.out.println("line: " + line);
-					//System.out.println(arr.length);
+					////System.out.println("line: " + line);
+					////System.out.println(arr.length);
 					response.setName(arr[0]);
 					response.setType(arr[1]);
 					response.setTotal_score(arr[2]);
@@ -209,7 +209,7 @@ public class Test23ServiceImpl implements Test23Service {
 				}
 				
 			}
-			System.out.println(map);
+			//System.out.println(map);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
