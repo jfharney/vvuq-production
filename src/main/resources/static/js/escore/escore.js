@@ -1,6 +1,8 @@
 angular.module('vvuqApp').controller('EscoreCtrl',['$scope','$http',function($scope,$http) {
 
 
+	
+	
 	/*
   $scope.test_type = '';
   $scope.test_type_done = 'false';

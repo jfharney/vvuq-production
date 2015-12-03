@@ -20,6 +20,7 @@
     <script src="js/main.js"></script>
     <script src="js/ingest.js"></script>
     <script src="js/escore/escore.js"></script>
+    <script src="js/escore/help.js"></script>
     
     
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
@@ -96,11 +97,11 @@ Dimensionality reduction
 								                <li class="disabled"><a href="#">FindPersonInImage</a></li>
 								        	</ul>
 							            </li>
-							            <li><a href="#help">Help</a></li>
+							            <li><a href="#help" ng-show="escore_help">Help</a></li>
 										
 									</ul>
 									<p class="navbar-text navbar-right hidden-xs">
-										Signed in as {{username}} 
+										Signed in as {{username}}
 										<a ng-click="logout()">
 											<b> Logout</b>	
 										</a>	
