@@ -1,0 +1,138 @@
+
+<div class="panel panel-default template"  ng-show="test20_show"> 
+	<div class="row template" style="max-height:700px;overflow:scroll">
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 20</div>
+		</div>
+
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h3>Test 20 - The expected time to answer a user query is should be as close to real time as possible.
+					</h3>
+				</div>
+				<div class="row"  style="margin-top:10px;">
+					<div class="col-xs-6">
+						
+						<label>
+					    	<input type="radio" ng-model="test20dataset.name" disabled="disabled" value="all">
+						    all
+						 </label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test20dataset.name" value="pubmedCentral_001">
+					    	pubmedCentral_001
+					  	</label><br/>
+					 	<label>
+					    	<input type="radio" ng-model="test20dataset.name" disabled="disabled" value="pubmedCentral_01">
+					    	pubmedCentral_01
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test20dataset.name" disabled="disabled" value="pubmedCentral_1">
+					    	pubmedCentral_1
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test20dataset.name" disabled="disabled" value="pubmedCentral">
+					    	pubmedCentral
+					  	</label><br/>
+					  	
+  
+ 
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<button class="btn btn-default" ng-click="test20()">
+							Run Test 20
+					</button>
+				</div>
+				<div class="row"  ng-show="show_results_test20">
+				
+					<div class="row">
+								<hr />
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<h4 style="text-align:left">Times</h4>
+						</div>
+					</div>
+					<div class="row" style="margin-top:10px;" >
+				
+						<div class="col-md-3" style="text-align:center">
+							<strong>Input File</strong>
+						</div>
+						<div class="col-md-3" style="text-align:center">
+							<strong>Keyword Lists Used</strong>
+						</div>
+						<div class="col-md-3" style="text-align:center">
+							<strong>ETL Time</strong>
+						</div>
+						<div class="col-md-3" style="text-align:center">
+							<strong>Query Time</strong>
+						</div>
+					</div>
+					<div class="row" style="margin-top:10px;">
+				
+						<div class="col-md-3" style="text-align:center">
+						{{resultstable_test20.inputFile}}
+						</div>
+						<div class="col-md-3" style="text-align:center">
+						{{resultstable_test20.keywordSets}}
+						</div>
+						<div class="col-md-3" style="text-align:center">
+						{{resultstable_test20.etlTime}}
+						</div>
+						<div class="col-md-3" style="text-align:center">
+						{{resultstable_test20.queryTime}}
+						</div>
+					</div>
+					<div class="row">
+								<hr />
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<h4 style="text-align:left">Results</h4>
+						</div>
+					</div>
+					
+					<div class="row">
+								<div class="col-md-4">
+								<strong>name</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>type</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>total score</strong>
+								</div>
+							</div>
+					<div class="row">
+						<hr />
+					</div>
+					<div class="row" ng-repeat="results in results_test20_5">
+								<div class="row">
+									<div class="col-md-4">
+									{{results.name}}
+									</div>
+									<div class="col-md-4">
+									{{results.type}}
+									</div>
+									<div class="col-md-4">
+									{{results.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+							</div>
+					<!--  
+					<div class="row" style="margin-top:10px;">
+						<div>Test 20 {{test21results.test20 ? 'Passed' : 'Failed'}}</div> 
+					</div>
+					-->
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+</div>
+

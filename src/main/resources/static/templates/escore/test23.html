@@ -1,0 +1,226 @@
+
+<div class="panel panel-default template" ng-show="test23_show"> 
+	<div class="row template" style="max-height:700px;overflow:scroll">
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 23</div>
+		</div>
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h3>Test 23 - System should produce the same results using the same input data and parameters on different computing systems, with the same hardware/software configurations.
+					</h3>
+				</div>
+				<div class="row"  style="margin-top:10px;">
+					<div class="col-xs-6">
+						
+						<label>
+					    	<input type="radio" ng-model="test23dataset.name" disabled="disabled" value="all">
+						    all
+						 </label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test23dataset.name" value="pubmedCentral_001" checked >
+					    	pubmedCentral_001
+					  	</label><br/>
+					 	<label>
+					    	<input type="radio" ng-model="test23dataset.name" disabled="disabled" value="pubmedCentral_01">
+					    	pubmedCentral_01
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test23dataset.name" disabled="disabled" value="pubmedCentral_1">
+					    	pubmedCentral_1
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test23dataset.name" disabled="disabled" value="pubmedCentral">
+					    	pubmedCentral
+					  	</label><br/>
+					  	
+					  	<!--  
+					  	<tt>dataset = {{test21dataset.name | json}}</tt><br/>
+					  	-->
+  
+ 
+					</div>
+				</div>
+				
+				<div class="row" style="margin-top:10px;">
+					<button class="btn btn-default" ng-click="test23('pubmedCentral_001','query1')">
+							Run Test 23
+					</button>
+				</div>
+				
+				<div class="row" style="margin-top:10px;">
+				
+					<div class="col-md-4">
+						<strong>ORNL Project Spark cluster</strong>
+						<div><a href ng-click="showORNL = !showORNL"><span ng-show="showORNL">Hide</span> <span ng-show="!showORNL">Show</span> Configuration Details</a></div>
+						<div ng-show="showORNL">{{ornl_details}}</div>
+					</div>
+					<div class="col-md-4">
+						<strong>LLNL System</strong>
+						<div><a href ng-click="showLLNL = !showLLNL"><span ng-show="showLLNL">Hide</span> <span ng-show="!showLLNL">Show</span> Configuration Details</a></div>
+						<div ng-show="showLLNL">{{llnl_details}}</div>
+					</div>
+					<div class="col-md-4">
+						<strong>HSARPA Big Data System</strong>
+						<div><a href ng-click="showHSARPA = !showHSARPA"><span ng-show="showHSARPA">Hide</span> <span ng-show="!showHSARPA">Show</span> Configuration Details</a></div>
+						<div ng-show="showHSARPA">{{hsarpa_details}}</div>
+					</div>
+				</div>
+				
+				<div class="row" ng-show="show_results_test23">
+					
+					<div class="row" style="margin-top:10px;">
+						<div class="col-md-4">
+							<div class="row">
+							<h4 style="text-align:center">ORNL Results</h4><span><a href ng-click="show_test23_10 = !show_test23_10"><span ng-show="show_test23_10">Show All Results</span> <span ng-show="!show_test23_10">Show 10 Results</span></a></span>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+								<strong>name</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>type</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>total score</strong>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="row">
+							<h4 style="text-align:center">LLNL Results</h4><span><a href ng-click="show_test23_10 = !show_test23_10"><span ng-show="show_test23_10">Show All Results</span> <span ng-show="!show_test23_10">Show 10 Results</span></a></span>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+								<strong>name</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>type</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>total score</strong>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="row">
+							<h4 style="text-align:center">HSARPA Results</h4><span><a href ng-click="show_test23_10 = !show_test23_10"><span ng-show="show_test23_10">Show All Results</span> <span ng-show="!show_test23_10">Show 10 Results</span></a></span>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+								<strong>name</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>type</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>total score</strong>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<hr />
+					</div>
+					<div class="row" style="margin-top:10px;">
+						<div class="col-md-4">
+						
+							<div class="row" ng-repeat="results in results_test23" ng-show="!show_test23_10">
+								<div class="row">
+									<div class="col-md-4">
+									{{results.name}}
+									</div>
+									<div class="col-md-4">
+									{{results.type}}
+									</div>
+									<div class="col-md-4">
+									{{results.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="row" ng-repeat="results in test23LLNLresults" ng-show="!show_test23_10">
+								<div class="col-md-4">
+								{{results.name}}
+								</div>
+								<div class="col-md-4">
+								{{results.type}}
+								</div>
+								<div class="col-md-4">
+								{{results.total_score}}
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="row" ng-repeat="results in test23HSARPAresults" ng-show="!show_test23_10">
+								<div class="col-md-4">
+								{{results.name}}
+								</div>
+								<div class="col-md-4">
+								{{results.type}}
+								</div>
+								<div class="col-md-4">
+								{{results.total_score}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top:10px;">
+						<div class="col-md-4">
+						
+							<div class="row" ng-repeat="results in results_test23_10" ng-show="show_test23_10">
+								<div class="row">
+									<div class="col-md-4">
+									{{results.name}}
+									</div>
+									<div class="col-md-4">
+									{{results.type}}
+									</div>
+									<div class="col-md-4">
+									{{results.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="row" ng-repeat="results in test23LLNLresults" ng-show="show_test23_10">
+								<div class="col-md-4">
+								{{results.name}}
+								</div>
+								<div class="col-md-4">
+								{{results.type}}
+								</div>
+								<div class="col-md-4">
+								{{results.total_score}}
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="row" ng-repeat="results in test23HSARPAresults" ng-show="show_test23_10">
+								<div class="col-md-4">
+								{{results.name}}
+								</div>
+								<div class="col-md-4">
+								{{results.type}}
+								</div>
+								<div class="col-md-4">
+								{{results.total_score}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top:10px;">
+						<!--  <div>Test 23 {{test23results.test23 ? 'Passed' : 'Failed'}}</div> -->
+					</div>
+				</div>	
+			</div>
+		</div>	
+	</div>
+</div>

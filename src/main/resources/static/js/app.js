@@ -23,6 +23,14 @@ vvuqApp.config(['$routeProvider','$httpProvider',
 				'templateUrl' : '/templates/escore.html',
 				'controller' : 'EscoreCtrl'
 			}).
+			when('/other',{
+				'templateUrl' : '/templates/other.html',
+				'controller' : 'EscoreCtrl'
+			}).
+			when('/help',{
+				'templateUrl' : '/templates/escore/help.html',
+				'controller' : 'EscoreCtrl'
+			}).
 			otherwise({
 				'redirectTo' : '/main',
 				'controller' : 'ContentCtrl'

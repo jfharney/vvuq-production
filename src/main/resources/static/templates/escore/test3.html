@@ -1,0 +1,114 @@
+ 
+<div class="panel panel-default template" ng-show="test3_show"> 
+	
+
+	<div class="row template" style="max-height:700px;overflow:scroll">
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 3</div>
+		</div>
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h3>Test 3 - Risk scores should aggregate across multiple user specified criteria.
+					</h3>
+				
+				</div>
+				<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+								<h4>Keyword Set Select</h4>
+							</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<div class="col-xs-6">
+						
+						<div ng-repeat="keyword_set in keyword_sets">
+							<label >
+							  <input
+							    type="checkbox"
+							    name="keyword_sets[]"
+							    value="{{keyword_set.name}}"
+							    ng-checked="selection_test3.indexOf(keyword_set.name) > -1"
+							    ng-click="toggleSelection(keyword_set.name)"
+							  > {{keyword_set.name}} 
+							</label>
+						</div>
+						
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px">
+					<button class="btn btn-default" ng-click="test3()" disabled>
+							Run Test 3
+					</button>
+				</div>
+				<div class="row" ng-show="show_results_test3" style="margin-top:10px">
+				
+					<div class="row">
+						<div class="col-md-6">
+							
+							<div class="row">
+								<h4>Results for keyword sets: <span>{{selection_test3}}</span></h4><span><a href ng-click="show_test3_10 = !show_test3_10"><span ng-show="show_test3_10">Show All Results</span> <span ng-show="!show_test3_10">Show 10 Results</span></a></span>
+							</div>
+							<div class="row" style="margin-top:10px;">
+								<div class="col-md-4">
+								<strong>name</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>type</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>total score</strong>
+								</div>
+							</div>
+							<div class="row">
+								<hr />
+							</div>
+							<div class="row">
+								
+								<div class="row" ng-repeat="result in results_test3_10" ng-show="show_test3_10">
+									<div class="row">
+										<div class="col-md-4">
+										{{result.name}}
+										</div>
+										<div class="col-md-4">
+										{{result.type}}
+										</div>
+										<div class="col-md-4">
+										{{result.total_score}}
+										</div>
+									</div>
+									<div class="row">
+									<hr />
+									</div>
+								</div>
+								<div class="row" ng-repeat="result in results_test3" ng-show="!show_test3_10">
+									<div class="row">
+										<div class="col-md-4">
+										{{result.name}}
+										</div>
+										<div class="col-md-4">
+										{{result.type}}
+										</div>
+										<div class="col-md-4">
+										{{result.total_score}}
+										</div>
+									</div>
+									<div class="row">
+									<hr />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+				
+				
+				
+				<div class="row" style="margin-top:10px;" ng-show="show_results_test3">
+					<!-- <div><h4>Test 3 {{test_result_test3 ? 'Passed' : 'Failed'}}</h4></div>  -->
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+

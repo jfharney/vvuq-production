@@ -1,0 +1,698 @@
+
+<div class="panel panel-default template"  ng-show="test4_show"> 
+	<div class="row template" style="max-height:700px;overflow:scroll">
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 4</div>
+		</div>
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h3>Test 4 - The user shall be able to differentially weight risk criteria
+					</h3>
+				</div>
+				<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+								<h4>Dataset Select</h4>
+							</div>
+				</div>
+				<div class="row"  style="margin-top:10px;">
+					<div class="col-xs-6">
+						
+						<label>
+					    	<input type="radio" ng-model="test4dataset.name" disabled="disabled" value="all">
+						    all
+						 </label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test4dataset.name" value="pubmedCentral_001" checked >
+					    	pubmedCentral_001
+					  	</label><br/>
+					 	<label>
+					    	<input type="radio" ng-model="test4dataset.name" disabled="disabled" value="pubmedCentral_01">
+					    	pubmedCentral_01
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test4dataset.name" disabled="disabled" value="pubmedCentral_1">
+					    	pubmedCentral_1
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test4dataset.name" disabled="disabled" value="pubmedCentral">
+					    	pubmedCentral
+					  	</label><br/>
+					  	
+ 
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="row" style="margin-top:10px;">
+					<div class="col-md-6">
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+								<h4>Default Weights</h4>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<strong>keyword list</strong>
+							</div>
+							<div class="col-md-6">
+							<strong>weight</strong>
+							</div>
+						</div>
+						<div class="row">
+						<hr />
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Post-Production Equipment
+							</div>
+							<div class="col-md-6">
+							1.0
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Dissemination Equipment
+							</div>
+							<div class="col-md-6">
+							1.0
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Research Words and Materials
+							</div>
+							<div class="col-md-6">
+							1.0
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<h4>Top 5 Risk Scores (Default Weights)</h4>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<strong>name</strong>
+							</div>
+							<div class="col-md-6">
+							<strong>risk score</strong>
+							</div>
+							
+						</div>
+						<div class="row">
+							<hr />
+						</div>
+						  
+						<div class="row" ng-repeat="results in results_test4_5" ng-show="show_results_test4_5"  >
+						
+								<div class="row">
+									<div class="col-md-6">
+									{{results.name}}
+									</div>
+									<div class="col-md-6">
+									{{results.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				
+				
+				<!--  
+				<div class="row">
+					<div class="col-md-6">
+						<div class="row">
+							<h4>Default</h4>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<strong>Keyword Set Name</strong>
+							</div>
+							<div class="col-md-6">
+							<strong>Weight</strong>
+							</div>
+						</div>
+						<hr />
+						<div class="row" style="margin-top:10px;" ng-repeat="keyword_set in keyword_sets">
+							<div class="col-md-6">
+							{{keyword_set.name}}
+							</div>
+							<div class="col-md-6">
+							  <label>Weight:
+							    <input type="text" name="input" disabled value="1" size="4">
+							  </label>
+							</div>
+						</div>
+						<hr />
+						
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+							<h4>User-Defined Weights</h4>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<strong>Keyword Set Name</strong>
+							</div>
+							<div class="col-md-6">
+							<strong>Weight</strong>
+							</div>
+						</div>
+						<hr />
+						<div class="row" style="margin-top:10px;" ng-repeat="keyword_set in keyword_sets">
+							<div class="col-md-6">
+							{{keyword_set.name}}
+							</div>
+							<div class="col-md-6">
+							  <label>Weight:
+							    <input type="text" name="input" ng-model='weights[$index]' size="4" ng-value="weights[$index]">
+							  </label>
+							</div>
+						</div>
+						
+						<hr />
+						
+						
+					</div>
+				</div>
+				-->
+				
+				
+				
+				
+				<div class="row" style="margin-top:10px;">
+					<div class="col-md-6">
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+								<h4>Customized Weights (1)</h4>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<strong>keyword list</strong>
+							</div>
+							<div class="col-md-6">
+							<strong>weight</strong>
+							</div>
+						</div>
+						<div class="row">
+						<hr />
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Post-Production Equipment
+							</div>
+							
+							<div class="col-md-6">
+							  <label>
+							    <input type="text" name="input" ng-model='weights_customized1[0]' size="4" ng-value="weights_customized1[0]" disabled>
+							  </label>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Dissemination Equipment
+							</div>
+							<div class="col-md-6">
+							  <label>
+							    <input type="text" name="input" ng-model='weights_customized1[1]' size="4" ng-value="weights_customized1[1]" disabled>
+							  </label>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Research Words and Materials
+							</div>
+							<div class="col-md-6">
+							  <label>
+							    <input type="text" name="input" ng-model='weights_customized1[2]' size="4" ng-value="weights_customized1[2]" disabled>
+							  </label>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<h4>Top 5 Risk Scores (Customized)</h4>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<strong>name</strong>
+							</div>
+							<div class="col-md-6">
+							<strong>risk score</strong>
+							</div>
+							
+						</div>
+						<div class="row">
+							<hr />
+						</div>
+						<div class="row" ng-show="show_results_test4_5">
+						Test ran to completion despite a negative weight.
+						</div>
+						<!--  
+						<div class="row" ng-repeat="results in results_test4_5_customized" ng-show="show_results_test4_5_customized" >
+								<div class="row">
+									<div class="col-md-6">
+									{{results.name}}
+									</div>
+									<div class="col-md-6">
+									{{results.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+						</div>
+						-->
+						
+					</div>
+				</div>
+				
+				
+				<div class="row" style="margin-top:10px;">
+					<div class="col-md-6">
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+								<h4>Customized Weights (2)</h4>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<strong>keyword list</strong>
+							</div>
+							<div class="col-md-6">
+							<strong>weight</strong>
+							</div>
+						</div>
+						<div class="row">
+						<hr />
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Post-Production Equipment
+							</div>
+							
+							<div class="col-md-6">
+							  <label>
+							    <input type="text" name="input" ng-model='weights_customized2[0]' size="4" ng-value="weights_customized2[0]" disabled>
+							  </label>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Dissemination Equipment
+							</div>
+							<div class="col-md-6">
+							  <label>
+							    <input type="text" name="input" ng-model='weights_customized2[1]' size="4" ng-value="weights_customized2[1]" disabled>
+							  </label>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Research Words and Materials
+							</div>
+							<div class="col-md-6">
+							  <label>
+							    <input type="text" name="input" ng-model='weights_customized2[2]' size="4" ng-value="weights_customized2[2]" disabled>
+							  </label>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<h4>Top 5 Risk Scores (Customized)</h4>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<strong>name</strong>
+							</div>
+							<div class="col-md-6">
+							<strong>risk score</strong>
+							</div>
+							
+						</div>
+						<div class="row">
+							<hr />
+						</div>
+						<div class="row" ng-show="show_results_test4_5">
+						Test ran to completion as expected
+						</div>
+						<!--  
+						<div class="row" ng-repeat="results in results_test4_5_customized" ng-show="show_results_test4_5_customized" >
+								<div class="row">
+									<div class="col-md-6">
+									{{results.name}}
+									</div>
+									<div class="col-md-6">
+									{{results.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+						</div>
+						-->
+						
+					</div>
+				</div>
+				
+				
+				
+				<div class="row" style="margin-top:10px;">
+					<div class="col-md-6">
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+								<h4>Customized Weights (3)</h4>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<strong>keyword list</strong>
+							</div>
+							<div class="col-md-6">
+							<strong>weight</strong>
+							</div>
+						</div>
+						<div class="row">
+						<hr />
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Post-Production Equipment
+							</div>
+							
+							<div class="col-md-6">
+							  <label>
+							    <input type="text" name="input" ng-model='weights_customized3[0]' size="4" ng-value="weights_customized3[0]" disabled>
+							  </label>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Dissemination Equipment
+							</div>
+							<div class="col-md-6">
+							  <label>
+							    <input type="text" name="input" ng-model='weights_customized3[1]' size="4" ng-value="weights_customized3[1]" disabled>
+							  </label>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Research Words and Materials
+							</div>
+							<div class="col-md-6">
+							  <label>
+							    <input type="text" name="input" ng-model='weights_customized3[2]' size="4" ng-value="weights_customized3[2]" disabled>
+							  </label>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<h4>Top 5 Risk Scores (Customized)</h4>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<strong>name</strong>
+							</div>
+							<div class="col-md-6">
+							<strong>risk score</strong>
+							</div>
+							
+						</div>
+						<div class="row">
+							<hr />
+						</div>
+						<div class="row" ng-show="show_results_test4_5">
+						Test ran to completion as expected.
+						</div>
+						<!--  
+						<div class="row" ng-repeat="results in results_test4_5_customized" ng-show="show_results_test4_5_customized" >
+								<div class="row">
+									<div class="col-md-6">
+									{{results.name}}
+									</div>
+									<div class="col-md-6">
+									{{results.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+						</div>
+						-->
+						
+					</div>
+				</div>
+				
+				
+				
+				<div class="row" style="margin-top:10px;">
+					<div class="col-md-6">
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+								<h4>Customized Weights (4)</h4>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<strong>keyword list</strong>
+							</div>
+							<div class="col-md-6">
+							<strong>weight</strong>
+							</div>
+						</div>
+						<div class="row">
+						<hr />
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Post-Production Equipment
+							</div>
+							
+							<div class="col-md-6">
+							  <label>
+							    <input type="text" name="input" ng-model='weights_customized4[0]' size="4" ng-value="weights_customized4[0]" disabled>
+							  </label>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Dissemination Equipment
+							</div>
+							<div class="col-md-6">
+							  <label>
+							    <input type="text" name="input" ng-model='weights_customized4[1]' size="4" ng-value="weights_customized4[1]" disabled>
+							  </label>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							Research Words and Materials
+							</div>
+							<div class="col-md-6">
+							  <label>
+							    <input type="text" name="input" ng-model='weights_customized4[2]' size="4" ng-value="weights_customized4[2]" disabled>
+							  </label>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<h4>Top 5 Risk Scores (Customized)</h4>
+							</div>
+						</div>
+						<div class="row" style="margin-top:10px;">
+							<div class="col-md-6">
+							<strong>name</strong>
+							</div>
+							<div class="col-md-6">
+							<strong>risk score</strong>
+							</div>
+							
+						</div>
+						<div class="row">
+							<hr />
+						</div>
+						<div class="row" ng-show="show_results_test4_5">
+						
+						Test ran to completion despite a weight > 1.0.
+						</div>
+						<!--  
+						<div class="row" ng-repeat="results in results_test4_5_customized" ng-show="show_results_test4_5_customized" >
+								<div class="row">
+									<div class="col-md-6">
+									{{results.name}}
+									</div>
+									<div class="col-md-6">
+									{{results.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+						</div>
+						-->
+						
+					</div>
+				</div>
+				
+				
+				<div class="row" style="margin-top:10px;">
+					<button class="btn btn-default" ng-click="test4Default()">
+							Run Test 4
+					</button>
+				</div>
+				
+				
+				
+				<!--  
+				<div class="row" style="margin-top:10px;">
+					<button class="btn btn-default" ng-click="test4Customized()">
+							Run Test 4 
+					</button>
+				</div>
+				-->
+				
+				
+				<!-- KEEP
+				<div class="row" ng-show="show_results_test4" style="margin-top:10px">
+				
+					<div class="row">
+						<div class="col-md-6">
+							
+							<div class="row">
+								<h4>Default Results </h4><span><a href ng-click="show_test4_10 = !show_test4_10"><span ng-show="show_test4_10">Show All Results</span> <span ng-show="!show_test4_10">Show 10 Results</span></a></span>
+							</div>
+							<div class="row" style="margin-top:10px;">
+								<div class="col-md-4">
+								<strong>name</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>type</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>total score</strong>
+								</div>
+							</div>
+							<div class="row">
+								<hr />
+							</div>
+							<div class="row" ng-repeat="result in results_test4_10" ng-show="show_test4_10">
+								<div class="row">
+									<div class="col-md-4">
+									{{result.name}}
+									</div>
+									<div class="col-md-4">
+									{{result.type}}
+									</div>
+									<div class="col-md-4">
+									{{result.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+							</div>
+							<div class="row" ng-repeat="result in results_test4" ng-show="!show_test4_10">
+								<div class="row">
+									<div class="col-md-4">
+									{{result.name}}
+									</div>
+									<div class="col-md-4">
+									{{result.type}}
+									</div>
+									<div class="col-md-4">
+									{{result.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							
+							<div class="row">
+								<h4>User Defined Results </h4><span><a href ng-click="show_test4_10 = !show_test4_10"><span ng-show="show_test4_10">Show All Results</span> <span ng-show="!show_test4_10">Show 10 Results</span></a></span>
+							</div>
+							<div class="row" style="margin-top:10px;">
+								<div class="col-md-4">
+								<strong>name</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>type</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>total score</strong>
+								</div>
+							</div>
+							<div class="row">
+								<hr />
+							</div>
+							<div class="row" ng-repeat="result in results_test4_10" ng-show="show_test4_10">
+								<div class="row">
+									<div class="col-md-4">
+									{{result.name}}
+									</div>
+									<div class="col-md-4">
+									{{result.type}}
+									</div>
+									<div class="col-md-4">
+									{{result.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+							</div>
+							
+							<div class="row" ng-repeat="result in results_test4" ng-show="!show_test4_10">
+								<div class="row">
+									<div class="col-md-4">
+									{{result.name}}
+									</div>
+									<div class="col-md-4">
+									{{result.type}}
+									</div>
+									<div class="col-md-4">
+									{{result.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+				-->
+				
+				<div class="row" style="margin-top:10px;" ng-show="show_results_test4">
+					<!--  <div>Test 4 {{test4results.test4 ? 'Passed' : 'Failed'}}</div> -->
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+ 

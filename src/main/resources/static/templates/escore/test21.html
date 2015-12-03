@@ -1,0 +1,227 @@
+
+<div class="panel panel-default template"  ng-show="test21_show"> 
+	<div class="row template" style="max-height:700px;overflow:scroll">
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 21</div>
+		</div>
+
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h3>Test 21 - The expected time to process large datasets is on the order of hours (h).
+					</h3>
+				</div>
+				<div class="row"  style="margin-top:10px;">
+					<div class="col-xs-6">
+						
+						<label>
+					    	<input type="radio" ng-model="test21dataset.name" disabled="disabled" value="all">
+						    all
+						 </label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test21dataset.name" value="pubmedCentral_001">
+					    	pubmedCentral_001
+					  	</label><br/>
+					 	<label>
+					    	<input type="radio" ng-model="test21dataset.name" disabled="disabled" value="pubmedCentral_01">
+					    	pubmedCentral_01
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test21dataset.name" disabled="disabled" value="pubmedCentral_1">
+					    	pubmedCentral_1
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test21dataset.name" disabled="disabled" value="pubmedCentral">
+					    	pubmedCentral
+					  	</label><br/>
+					  	
+  
+ 
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<button class="btn btn-default" ng-click="test21()">
+							Run Test 21
+					</button>
+				</div>
+				<div class="row"  ng-show="show_results_test21">
+				
+					<div class="row">
+								<hr />
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<h4 style="text-align:left">Times</h4>
+						</div>
+					</div>
+					<div class="row" style="margin-top:10px;" >
+				
+						<div class="col-md-3" style="text-align:center">
+							<strong>Input File</strong>
+						</div>
+						<div class="col-md-3" style="text-align:center">
+							<strong>Keyword Lists Used</strong>
+						</div>
+						<div class="col-md-3" style="text-align:center">
+							<strong>ETL Time</strong>
+						</div>
+						<div class="col-md-3" style="text-align:center">
+							<strong>Query Time</strong>
+						</div>
+					</div>
+					<div class="row" style="margin-top:10px;">
+				
+						<div class="col-md-3" style="text-align:center">
+						{{resultstable_test21.inputFile}}
+						</div>
+						<div class="col-md-3" style="text-align:center">
+						{{resultstable_test21.keywordSets}}
+						</div>
+						<div class="col-md-3" style="text-align:center">
+						{{resultstable_test21.etlTime}}
+						</div>
+						<div class="col-md-3" style="text-align:center">
+						{{resultstable_test21.queryTime}}
+						</div>
+					</div>
+					<div class="row">
+								<hr />
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<h4 style="text-align:left">Results</h4>
+						</div>
+					</div>
+					
+					<div class="row">
+								<div class="col-md-4">
+								<strong>name</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>type</strong>
+								</div>
+								<div class="col-md-4">
+								<strong>total score</strong>
+								</div>
+							</div>
+					<div class="row">
+						<hr />
+					</div>
+					<div class="row" ng-repeat="results in results_test21_5">
+								<div class="row">
+									<div class="col-md-4">
+									{{results.name}}
+									</div>
+									<div class="col-md-4">
+									{{results.type}}
+									</div>
+									<div class="col-md-4">
+									{{results.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+							</div>
+					<!--  
+					<div class="row" style="margin-top:10px;">
+						<div>Test 20 {{test21results.test20 ? 'Passed' : 'Failed'}}</div> 
+					</div>
+					-->
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+
+
+<!--  
+<div class="panel panel-default template"  ng-show="test21_show"> 
+	<div class="row template" style="max-height:400px;overflow:scroll">
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 21</div>
+		</div>
+
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h3>Test 21 - Test    The expected time to process large datasets is on the order of hours (h).
+					</h3>
+				</div>
+				<div class="row"  style="margin-top:10px;">
+					<div class="col-xs-6">
+						
+						<label>
+					    	<input type="radio" ng-model="test21dataset.name" disabled="disabled" value="all">
+						    all
+						 </label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test21dataset.name" value="pubmedCentral_001">
+					    	pubmedCentral_001
+					  	</label><br/>
+					 	<label>
+					    	<input type="radio" ng-model="test21dataset.name" disabled="disabled" value="pubmedCentral_01">
+					    	pubmedCentral_01
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test21dataset.name" disabled="disabled" value="pubmedCentral_1">
+					    	pubmedCentral_1
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test21dataset.name" disabled="disabled" value="pubmedCentral">
+					    	pubmedCentral
+					  	</label><br/>
+					  	
+  
+ 
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<button class="btn btn-default" ng-click="test21()">
+							Run Test 21
+					</button>
+				</div>
+				<div class="row"  ng-show="show_results_test21">
+				
+					<div class="row">
+						<div class="col-md-9">
+							<h4 style="text-align:center">Results</h4>
+						</div>
+					</div>
+					<div class="row" style="margin-top:10px;" >
+				
+						<div class="col-md-3" style="text-align:center">
+							<strong>Input File</strong>
+						</div>
+						<div class="col-md-3" style="text-align:center">
+							<strong>Number of rows</strong>
+						</div>
+						<div class="col-md-3" style="text-align:center">
+							<strong>Query Time</strong>
+						</div>
+					</div>
+					<div class="row" style="margin-top:10px;">
+				
+						<div class="col-md-3" style="text-align:center">
+						{{results_test21.inputFile}}
+						</div>
+						<div class="col-md-3" style="text-align:center">
+						{{results_test21.numRows}}
+						</div>
+						<div class="col-md-3" style="text-align:center">
+						{{results_test21.queryTime}}
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+</div>
+-->
+

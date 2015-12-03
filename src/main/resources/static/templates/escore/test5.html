@@ -1,0 +1,193 @@
+
+<div class="panel panel-default template"  ng-show="test5_show"> 
+	<div class="row template" style="max-height:700px;overflow:scroll">
+		<div class="col-xs-3 hidden-xs">  
+			<div class="h2">Test Case 5</div>
+		</div>
+		<div class="col-xs-9 col-sm-8 hidden-xs">
+			<div class="template-padding">
+				<div class="row">
+					<h3>Test 5 -  Risk scores should be deterministic. 
+					</h3>
+				</div>
+				<div class="row"  style="margin-top:10px;">
+					<div class="col-xs-4">
+						
+						<label>
+					    	<input type="radio" ng-model="test5dataset.name" disabled="disabled" value="all">
+						    all
+						 </label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test5dataset.name" value="pubmedCentral_001" checked="checked" >
+					    	pubmedCentral_001
+					  	</label><br/>
+					 	<label>
+					    	<input type="radio" ng-model="test5dataset.name" disabled="disabled" value="pubmedCentral_01">
+					    	pubmedCentral_01
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test5dataset.name" disabled="disabled" value="pubmedCentral_1">
+					    	pubmedCentral_1
+					  	</label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test5dataset.name" disabled="disabled" value="pubmedCentral">
+					    	pubmedCentral
+					  	</label><br/>
+					  	
+  
+					</div>
+					<div class="col-xs-4">
+						<label>
+					    	<input type="radio" ng-model="test5numruns.name" value="1">
+						    1 run
+						 </label><br/>
+						<label>
+					    	<input type="radio" ng-model="test5numruns.name" disabled="disabled" value="100">
+						    100 runs
+						 </label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test5numruns.name" disabled="disabled" value="1000" checked="checked" >
+					    	1000 runs
+					  	</label><br/>
+					 	<label>
+					    	<input type="radio" ng-model="test5numruns.name" disabled="disabled" value="10000">
+					    	10000 runs
+					  	</label><br/>
+					  	
+					</div>
+					<div class="col-xs-4">
+						<label>
+					    	<input type="radio" ng-model="test5numrecords.name" value="1" checked="checked">
+						    1 record
+						 </label><br/>
+						<label>
+					    	<input type="radio" ng-model="test5numrecords.name" disabled="disabled" value="100">
+						    10 records
+						 </label><br/>
+					  	<label>
+					    	<input type="radio" ng-model="test5numrecords.name" disabled="disabled" value="1000"  >
+					    	All records
+					  	</label><br/>
+					  	
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;">
+					<button class="btn btn-default" ng-click="test5()" disabled>
+							Run Test 5
+					</button>
+				</div>
+				
+				<div class="row" ng-show="show_results_test5" style="margin-top:10px">
+				
+					<div class="row">
+						<div class="col-md-6">
+							
+							<div class="row">
+								<h4>Results</h4>
+							</div>
+							
+							
+							<div class="row" style="margin-top:10px;">
+								<div class="col-md-3" style="text-align:center">
+								<strong>name</strong>
+								</div>
+								<div class="col-md-2" style="text-align:center">
+								<strong>type</strong>
+								</div>
+								<div class="col-md-2" style="text-align:center">
+								<strong>num iterations</strong>
+								</div>
+								<div class="col-md-2" style="text-align:center">
+								<strong>mean score</strong>
+								</div>
+								<div class="col-md-2" style="text-align:center">
+								<strong>range</strong>
+								</div>
+								<div class="col-md-1" style="text-align:center">
+								
+								</div>
+							</div>
+							
+							<div class="row" style="margin-top:10px;" ng-repeat="result in results_test5_1">
+								<div class="col-md-3">
+								{{result.name}}
+								</div>
+								<div class="col-md-3">
+								{{result.type}}
+								</div>
+								<div class="col-md-2">
+								{{numiterations5}}
+								</div>
+								<div class="col-md-2">
+								{{mean}}
+								</div>
+								<div class="col-md-2">
+								{{range_test5}}
+								</div>
+							</div>
+							<!--  
+							<div class="row" ng-repeat="result in results_test3_10" ng-show="show_test3_10">
+								<div class="row">
+									<div class="col-md-4">
+									{{result.name}}
+									</div>
+									<div class="col-md-4">
+									{{result.type}}
+									</div>
+									<div class="col-md-4">
+									{{result.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+							</div>
+							<div class="row" ng-repeat="result in results_test3" ng-show="!show_test3_10">
+								<div class="row">
+									<div class="col-md-4">
+									{{result.name}}
+									</div>
+									<div class="col-md-4">
+									{{result.type}}
+									</div>
+									<div class="col-md-4">
+									{{result.total_score}}
+									</div>
+								</div>
+								<div class="row">
+								<hr />
+								</div>
+							</div>
+							-->
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<h4>Stats</h4>
+							</div>
+							<div class="row" style="margin-top:10px;">
+								Mean: {{mean}}
+							</div>
+							<div class="row" style="margin-top:10px;">
+								Max: {{max}}
+							</div>
+							<div class="row" style="margin-top:10px;">
+								Min: {{min}}
+							</div>
+							<div class="row" style="margin-top:10px;">
+								Variance: {{variance}}
+							</div>
+						</div>
+					</div>
+				
+				</div>
+				
+				
+				<div class="row" style="margin-top:10px;" ng-show="show_results_test5">
+					<!-- <div>Test 5 {{test5results.test5 ? 'Passed' : 'Failed'}}</div>   -->
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+
