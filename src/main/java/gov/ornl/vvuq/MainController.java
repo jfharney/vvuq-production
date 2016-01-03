@@ -1,14 +1,37 @@
 package gov.ornl.vvuq;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.Vector;
+import java.util.concurrent.TimeUnit;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
+import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +41,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParser;
+
+import gov.ornl.vvuq.matrix.DenseMatrix;
 import gov.ornl.vvuq.model.Greeting;
 import gov.ornl.vvuq.model.Test20Request;
 import gov.ornl.vvuq.model.Test20Response;
@@ -30,6 +57,8 @@ import gov.ornl.vvuq.service.GreetingService;
 import gov.ornl.vvuq.service.Test20Service;
 import gov.ornl.vvuq.service.Test23Service;
 import gov.ornl.vvuq.service.Test3Service;
+import gov.ornl.vvuq.model.Receiver;
+import gov.ornl.vvuq.model.Message;
 
 @Controller
 public class MainController {
@@ -52,7 +81,92 @@ public class MainController {
     }
 	
 
+	final static String queueName = "messaginggateway-chat-queue";
+	
+	
+	//@Autowired
+	//AnnotationConfigApplicationContext context;
+	
+	@Autowired
+	RabbitTemplate rabbitTemplate;
+	
+	@Bean
+	Queue queue() {
+		return new Queue(queueName, false);
+	}
+	
+	@Bean
+	TopicExchange exchange() {
+		return new TopicExchange("Spring-boot-exchange");
+	}
+	
+	@Bean
+	Binding binding(Queue queue, TopicExchange exchange) {
+		return BindingBuilder.bind(queue).to(exchange).with(queueName);
+	}
+	
+	@Bean
+	SimpleMessageListenerContainer container(ConnectionFactory connectionFactory, MessageListenerAdapter listenerAdapter) {
+		SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
+		container.setConnectionFactory(connectionFactory);
+		container.setQueueNames(queueName);
+		container.setMessageListener(listenerAdapter);
+		return container;
+	}
+	
+	@Bean
+    Receiver receiver() {
+        return new Receiver();
+    }
+
+	@Bean
+	MessageListenerAdapter listenerAdapter(Receiver receiver) {
+		return new MessageListenerAdapter(receiver, "receiveMessage");
+	}
     
+	
+	
+	
+	
+	
+	
+	
+	
+	@RequestMapping(value="/nmf",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
+   	public ResponseEntity<Collection<Test23Response>> nmf(@RequestBody Greeting greeting) throws InterruptedException {
+
+       	
+       	//Map<String,Test23Response> test23ResponseMap = test23Service.getTest23ResponseMap();
+       	
+       	Collection<Test23Response> responses = test23Service.findAll();
+       	
+       	System.out.println("greeting: " + greeting.getText());
+       	
+       	String msg = "Hello from RabbitMQ!";
+    	String all = "All";
+    	Message message = new Message(msg);
+    	
+        System.out.println("Waiting five seconds...");
+        //Thread.sleep(5000);
+        System.out.println("Sending message...");
+        
+        rabbitTemplate.convertAndSend(queueName, message);
+        System.out.println("Continuing...");
+        receiver().getLatch().await(3000, TimeUnit.MILLISECONDS);
+        System.out.println("After get Latch");
+       	
+       	
+       	
+       	return new ResponseEntity<Collection<Test23Response>>(responses,
+                   HttpStatus.OK);
+       	
+       	
+       }
+       
+
+	
+	
+	
 
     @RequestMapping(value="/test3",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
    	public ResponseEntity<Collection<Test23Response>> test3(@RequestBody Test23Request test23Request) {
@@ -210,6 +324,110 @@ public class MainController {
                 HttpStatus.OK);
     }
     
+    @RequestMapping(
+            value = "/api/greetings2",
+            method = RequestMethod.GET,
+            produces = "text/csv")
+    public void getGreetings3(HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+
+    	
+    	response.setContentType("data:text/csv;charset=utf-8"); 
+        //response.setHeader("Content-Disposition","attachment; filename=\yourData.csv\"");
+        
+    	
+    	
+    	
+    }
+    
+    //{"denseMatrix": {"numRows": 5, "data": [0.0, 0.0, 0.7345260387651715, 0.0, 0.7345260387727607, 0.0, 0.7345260387641137, 0.0, 0.0, 2.2204460492503136e-16], "numCols": 2}}
+    @RequestMapping(
+            value = "/api/greetings2",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<DenseMatrix> getGreetings2() {
+
+    	
+    	
+    	String path = "/Users/8xo/software/code-int/production/vvuq";
+    	String filename = path + "/MAT-nmf-python-w-nimfa_icm.json";
+    	
+    	String currentDir = System.getProperty("user.dir");
+        System.out.println("Current dir using System:" +currentDir);
+        
+        JSONParser parser = new JSONParser();
+        DenseMatrix denseMatrix = null;
+        try {
+        	 
+            Object obj = parser.parse(new FileReader(
+                    filename));
+ 
+            JSONObject jsonObject = (JSONObject) obj;
+ 
+            JSONObject denseMatrixObj = (JSONObject) jsonObject.get("denseMatrix");
+            //double[] data;
+        	Long numRows = (Long) denseMatrixObj.get("numRows");
+        	Long numCols = (Long) denseMatrixObj.get("numCols");
+        	JSONArray dataArray = (JSONArray) denseMatrixObj.get("data");
+        	double [] data = new double[dataArray.size()];
+        	
+        	for(int i=0;i<data.length;i++) {
+        		data[i] = (double)dataArray.get(i);
+        		System.out.println("data[" + i + "]: " + data[i]);
+        	}
+        	
+        	String numRowsStr = Long.toString(numRows);
+        	String numColsStr = Long.toString(numCols);
+        	
+        	Integer numRowsInt = Integer.parseInt(numRowsStr);
+        	Integer numColsInt = Integer.parseInt(numColsStr);
+        	
+            System.out.println("numRows: " + numRows);
+            System.out.println("numCols: " + numCols);
+            
+            denseMatrix = new DenseMatrix(numRowsInt,numColsInt,data);
+            
+            /*
+             * line: {"denseMatrix": {"numRows": 5, "data": [0.0, 0.0, 0.7345260387651715, 0.0, 0.7345260387727607, 0.0, 0.7345260387641137, 0.0, 0.0, 2.2204460492503136e-16], "numCols": 2}}
+            String name = (String) jsonObject.get("Name");
+            String author = (String) jsonObject.get("Author");
+            JSONArray companyList = (JSONArray) jsonObject.get("Company List");
+ 
+            System.out.println("Name: " + name);
+            System.out.println("Author: " + author);
+            System.out.println("\nCompany List:");
+            Iterator<String> iterator = companyList.iterator();
+            while (iterator.hasNext()) {
+                System.out.println(iterator.next());
+            }
+ 			*/
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        /*
+    	List<String> records = new ArrayList<String>();
+    	  try
+    	  {
+    	    BufferedReader reader = new BufferedReader(new FileReader(filename));
+    	    String line;
+    	    while ((line = reader.readLine()) != null)
+    	    {
+    	    	System.out.println("line: " + line);
+    	      records.add(line);
+    	    }
+    	    reader.close();
+    	  }
+    	  catch (Exception e)
+    	  {
+    	    System.err.format("Exception occurred trying to read '%s'.", filename);
+    	    e.printStackTrace();
+    	  }
+    	*/
+    	  
+        //Collection<Greeting> greetings = greetingService.findAll();
+
+        return new ResponseEntity<DenseMatrix>(denseMatrix,
+                HttpStatus.OK);
+    }
     
     
     @RequestMapping(

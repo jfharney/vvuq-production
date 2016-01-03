@@ -6,6 +6,8 @@ VVUQ.num_listings_best = 5;
 
 VVUQ.keyword_list = ['keyword1', 'keyword2', 'keyword3', 'keyword4', 'keyword5'];
 
+VVUQ.data_sources_list = ['example_faces'];
+
 VVUQ.available_datasets = ['all','pubmedCentral_001','pubmedCentral_01','pubmedCentral_1','pubmedCentral'];
 
 VVUQ.test23LLNLresults = [

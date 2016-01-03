@@ -31,6 +31,10 @@ vvuqApp.config(['$routeProvider','$httpProvider',
 				'templateUrl' : '/templates/escore/help.html',
 				'controller' : 'EscoreCtrl'
 			}).
+			when('/nmf',{
+				'templateUrl' : '/templates/nmf/nmf.html',
+				'controller' : 'NMFCtrl'
+			}).
 			otherwise({
 				'redirectTo' : '/main',
 				'controller' : 'ContentCtrl'
