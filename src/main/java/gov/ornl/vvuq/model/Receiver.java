@@ -19,7 +19,24 @@ public class Receiver {
 		} else {
 			System.out.println("Received <" + message.getType() + ">");
 			System.out.println("----Test nmf----\n\n");
-			//Driver.testNmf();
+			
+			String [] names = {"nimfa_nmf","nimfa_icm"};//,"nimfa_icm","nimfa_lsnmf"};
+			int [] ranks = {1,2,3,4,5};
+			
+			String func = "";
+			
+			if(message.getType().equals("factorize")) {
+				func = "factorize";
+			} else if (message.getType().equals("compare")) {
+				func = "compare";
+			}
+			
+			
+			Driver.testNmf(names,ranks,func);
+			
+			
+			
+			
 			System.out.println("\n\n----End Test nmf----");
 			Thread.sleep(5000);
 		}

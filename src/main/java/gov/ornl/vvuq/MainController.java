@@ -133,28 +133,38 @@ public class MainController {
 	
 	
 	@RequestMapping(value="/nmf",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
-   	public ResponseEntity<Collection<Test23Response>> nmf(@RequestBody Greeting greeting) throws InterruptedException {
+   	//public ResponseEntity<Collection<Test23Response>> nmf(@RequestBody Greeting greeting) throws InterruptedException {
+	public ResponseEntity<Collection<Test23Response>> nmf(@RequestBody Greeting greeting) throws InterruptedException {
 
+		String type = greeting.getText();
+		String dir = greeting.getDir();
+		String [] names = greeting.getNames();
+		//String [] names = greeting.get
+		int [] ranks = greeting.getRanks();
+
+		System.out.println("Type: " + type);
+		System.out.println("Dir: " + dir);
+		System.out.println(Arrays.toString(names));
+		System.out.println(Arrays.toString(ranks));
+		
        	
-       	//Map<String,Test23Response> test23ResponseMap = test23Service.getTest23ResponseMap();
-       	
+		
        	Collection<Test23Response> responses = test23Service.findAll();
        	
-       	System.out.println("greeting: " + greeting.getText());
        	
-       	String msg = "Hello from RabbitMQ!";
-    	String all = "All";
-    	Message message = new Message(msg);
+       	
+       	/*
+    	Message message = new Message(type,names,ranks);
     	
         System.out.println("Waiting five seconds...");
-        //Thread.sleep(5000);
+        Thread.sleep(5000);
         System.out.println("Sending message...");
         
         rabbitTemplate.convertAndSend(queueName, message);
         System.out.println("Continuing...");
         receiver().getLatch().await(3000, TimeUnit.MILLISECONDS);
         System.out.println("After get Latch");
-       	
+       	*/
        	
        	
        	return new ResponseEntity<Collection<Test23Response>>(responses,
@@ -162,7 +172,16 @@ public class MainController {
        	
        	
        }
-       
+	/*
+	 * 
+       	//Map<String,Test23Response> test23ResponseMap = test23Service.getTest23ResponseMap();
+       	 * 
+   	System.out.println("greeting: " + greeting1.getText());
+   	
+   	String msg = type;
+   	String [] names = {"nimfa_nmf","nimfa_icm"};//,"nimfa_icm","nimfa_lsnmf"};
+	int [] ranks = {1,2,3,4,5};
+	*/
 
 	
 	
@@ -175,6 +194,8 @@ public class MainController {
        	//Map<String,Test23Response> test23ResponseMap = test23Service.getTest23ResponseMap();
        	
        	Collection<Test23Response> responses = test23Service.findAll();
+       	
+       	
        	
        	
        	return new ResponseEntity<Collection<Test23Response>>(responses,
@@ -192,6 +213,14 @@ public class MainController {
        	
        	Collection<Test23Response> responses = test23Service.findAll();
        	
+       	try {
+           	System.out.println("\n\nIn test 4\n\n");
+			Thread.sleep(2000);
+	       	System.out.println("\n\nEnd test 4\n\n");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
        	
        	return new ResponseEntity<Collection<Test23Response>>(responses,
                    HttpStatus.OK);

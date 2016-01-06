@@ -44,7 +44,8 @@ def nimfa_nmf(matrix, rank, model_factory=nimfa.Nmf):
     face = nimfa.examples.cbcl_images
     
     
-    #print str('dir medulloblastoma: ' + dir(med))
+    
+    #print 'matrix>>>: ' + str(matrix)
     
     model = model_factory(matrix, rank=rank)
     model_fit = model()
@@ -54,9 +55,9 @@ def nimfa_nmf(matrix, rank, model_factory=nimfa.Nmf):
     H = model_fit.coef()
     
     
-    print 'W: ' + str(W)
+    #print 'W: ' + str(W)
     W1_flat = list(W.flat)
-    print 'flat W: ' + str(W1_flat)
+    #print 'flat W: ' + str(W1_flat)
     
     model_factory=nimfa_icm
     model_fit = model()
@@ -65,13 +66,10 @@ def nimfa_nmf(matrix, rank, model_factory=nimfa.Nmf):
     H = model_fit.coef()
     
     
-    print 'W: ' + str(W)
+    #print 'W: ' + str(W)
     W2_flat = list(W.flat)
-    print 'flat W: ' + str(W2_flat)
+    #print 'flat W: ' + str(W2_flat)
     
-    from sklearn.metrics.cluster import normalized_mutual_info_score
-    
-    print str(normalized_mutual_info_score(W1_flat,W2_flat))
 
     #print 'H: ' + str(H)
     '''
@@ -118,6 +116,7 @@ def nimfa_icm(matrix, rank):
 
 @implementation("nimfa_lfnmf")
 def nimfa_lfnmf(matrix, rank):
+    print 'doing lfnmf'
     return nimfa_nmf(matrix, rank, nimfa.Lfnmf)
 
 @implementation("nimfa_nsnmf")
@@ -161,7 +160,7 @@ except ImportError as exc:
 
 class Matrix:
     def __init__(self, data):
-        print '\nInstantiating'
+        #print '\nInstantiating'
         self.data = np.array(data)
 
     @classmethod
@@ -223,7 +222,12 @@ def read():
     print("\nReading CBCL faces database\n\n")
     #/Users/8xo/software/nimfa/nimfa/nimfa/examples
     #dir = join(dirname('/Users/8xo/software/nimfa/nimfa/nimfa/examples'), 'datasets', 'CBCL_faces', 'face')
+    #'/Users/8xo/software/nimfa/nimfa/nimfa/examples'
+    
     dir = join(dirname(dirname(abspath(__file__))), 'datasets', 'CBCL_faces', 'face')
+    print 'dirname: ' + str(dir)
+    print("\nEnd Reading CBCL faces database\n\n")
+    
     V = np.zeros((19 * 19, 2429))
     for image in range(2429):
         #print 'image'
@@ -286,50 +290,151 @@ def factorize(V):
 #def main(implementation, matrix_filename, w_filename, h_filename, rank,func='standard',matrix1=None,matrix2=None, type="nimfa_nmf"):
 def main(implementation, matrix_filename, w_filename, h_filename, rank,func='standard',matrix1=None,matrix2=None, type="nimfa_icm", model_factory=nimfa.Nmf):
     
-    print 'type: ' + type
     
-    #print 'reading V...'
-    V = read()
-    #print 'preprocessing V...'
-    V = preprocess(V)
+    if func == "factorize":
+        
+        print 'type: ' + type
+        
+        #print 'reading V...'
+        V = read()
+        #print 'preprocessing V...'
+        V = preprocess(V)
     
-    #print 'rank: ' + str(rank)
+        #print 'rank: ' + str(rank)
+        
+        matrix = Matrix.from_file(matrix_filename)
+        
+        print 'matrix: ' + str(matrix)
+        model_fit = None
+        
+        if type == 'nimfa_nmf':
+            model_factory = nimfa.Nmf
+            model = model_factory(V, rank=rank)
+            #model = model_factory(matrix, rank=rank)
+            model_fit = model()
+        elif type == 'nimfa_pmf':
+            model_factory = nimfa.Pmf
+            model = model_factory(V, rank=rank)
+            #model = model_factory(matrix, rank=rank)
+            model_fit = model()
+        elif type == 'nimfa_icm':
+            model_factory = nimfa.Icm
+            model = model_factory(V, rank=rank)
+            #model = model_factory(matrix, rank=rank)
+            model_fit = model()
+        elif type == 'nimfa_lfnmf':
+            print 'type=nimfa_lfnmf'
+            model_factory = nimfa.Lfnmf
+            model = model_factory(V, rank=rank)
+            #model = model_factory(matrix, rank=rank)
+            model_fit = model()
+        elif type == 'nimfa_lsnmf':
+            print 'type=nimfa_lsnmf'
+            model_factory = nimfa.Lsnmf
+            model = model_factory(V, rank=rank)
+            #model = model_factory(matrix, rank=rank)
+            model_fit = model()
+        elif type == 'nimfa_snmf':
+            model_factory = nimfa.Snmf
+            model = model_factory(V, rank=rank)
+            #model = model_factory(matrix, rank=rank)
+            model_fit = model()
+        
+        W = model_fit.basis()
+        H = model_fit.coef()
+        
+        print 'h_filename: ' + str(w_filename)
+        
+        print 'Matrix class: ' + str(dir(H))
+        
+        print 'H: ' + str(H)
+        
+        print 'np.array(W): ' + str(np.array(H))
+        
+        W = Matrix(W)
+        H = Matrix(H)
+        
+        W.to_file(w_filename)
+        H.to_file(h_filename)
+        
+    elif func == "compare":
+        
+        print '\n\ncompare\n\n'
+        
+        #matrix_filename_nmf = 'example_nmf-2.json';
+        #matrix_filename_icm = 'example_icm-2.json';
+        
+        
+        #print 'matrix_nmf: ' + str(matrix_nmf.data.flatten())
+        #print 'matrix_icm: ' + str(matrix_icm.data.flatten())
+        
+        from sklearn.metrics.cluster import normalized_mutual_info_score
+        print "mutualinfoscore: " + str(normalized_mutual_info_score([0,0,1,1,],[0,0,1,.5]))
+        
+        file_str = ''
+        
+        file_str += "date,bucket,count\n"
+        
+        for i in range(1,6):
+            
+            matrix_filename_nmf = 'MAT-nmf-python-h-nimfa_nmf-' + str(i) + '.json'
+            matrix_nmf = Matrix.from_file(matrix_filename_nmf)
+            
+            for j in range(1,6):
+                matrix_filename_icm = 'MAT-nmf-python-h-nimfa_icm-' + str(j) + '.json'
+                matrix_icm = Matrix.from_file(matrix_filename_icm)
+                print 'length i: ' + str(i) + " " + str(len(matrix_nmf.data.flatten()))
+                print 'length j: ' + str(j) + " " + str(len(matrix_icm.data.flatten()))
+                
+                xStr = i
+                if i == 1:
+                    xStr = "2012-07-20"
+                elif i == 2:
+                    xStr = "2012-07-21"
+                elif i == 3:
+                    xStr = "2012-07-22"
+                elif i == 4:
+                    xStr = "2012-07-23"
+                else:
+                    xStr = "2012-07-24"
+                
+            
+                
+                if i == j:
+                    print str(xStr) + "," + str(j) + "," + str(normalized_mutual_info_score(matrix_nmf.data.flatten(),matrix_icm.data.flatten())) + "\n"
+                    file_str += str(xStr) + "," + str(j) + "," + str(normalized_mutual_info_score(matrix_nmf.data.flatten(),matrix_icm.data.flatten())) + "\n"
+                    
+                else:
+                    print str(xStr) + "," + str(j) + "," + str(0) + "\n"  
+                    file_str += str(xStr) + "," + str(j) + "," + str(0) + "\n"
+                              
+        text_file = open("src/main/resources/static/data/output2.csv", "w")
+        text_file.write(file_str)
+        text_file.close()
+        
+        
+if __name__ == "__main__":
+    import argparse
+
+    print 'args'
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--implementation")
+    parser.add_argument("--matrix-filename")
+    parser.add_argument("--w-filename")
+    parser.add_argument("--h-filename")
+    parser.add_argument("--rank", type=int)
+    parser.add_argument("--func")
+    parser.add_argument("--matrix1")
+    parser.add_argument("--matrix2")
+    parser.add_argument("--type")
     
-    matrix = Matrix.from_file(matrix_filename)
-    
-    print 'matrix: ' + str(matrix)
-    model_fit = None
-    
-    if type == 'nimfa_nmf':
-        model_factory = nimfa.Nmf
-        model = model_factory(V, rank=rank)
-        #model = model_factory(matrix, rank=rank)
-        model_fit = model()
-    elif type == 'nimfa_icm':
-        model_factory = nimfa.Icm
-        model = model_factory(V, rank=rank)
-        #model = model_factory(matrix, rank=rank)
-        model_fit = model()
-    
-    
-    W = model_fit.basis()
-    H = model_fit.coef()
-    
-    print 'h_filename: ' + str(w_filename)
-    
-    print 'Matrix class: ' + str(dir(H))
-    
-    print 'H: ' + str(H)
-    
-    print 'np.array(W): ' + str(np.array(H))
-    
-    W = Matrix(W)
-    H = Matrix(H)
-    
-    W.to_file(w_filename)
-    H.to_file(h_filename)
-    #np.savetxt(w_filename, W)
-    
+    args = parser.parse_args()
+
+    print 'args'
+    main(**vars(args))
+
+
+
     '''
     W.to_file(w_filename)
     H.to_file(h_filename)
@@ -426,22 +531,3 @@ def main(implementation, matrix_filename, w_filename, h_filename, rank,func='sta
 
     '''
     
-if __name__ == "__main__":
-    import argparse
-
-    print 'args'
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--implementation")
-    parser.add_argument("--matrix-filename")
-    parser.add_argument("--w-filename")
-    parser.add_argument("--h-filename")
-    parser.add_argument("--rank", type=int)
-    parser.add_argument("--func")
-    parser.add_argument("--matrix1")
-    parser.add_argument("--matrix2")
-    parser.add_argument("--type")
-    
-    args = parser.parse_args()
-
-    print 'args'
-    main(**vars(args))

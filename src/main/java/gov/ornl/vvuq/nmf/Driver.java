@@ -28,48 +28,56 @@ import javax.mail.internet.MimeMessage;
 public class Driver {
 
 	//used in NmfPython
-	public static String py_filename = "/nmf-wrapper.py";
+	public static String py_filename = "/nmf-compare.py";
+	
+	
+	/* 1,1
+	 * Total time(ns): 2329747899
+		Total time(s): 2.329747899
+	 * 
+	 */
+	/*
+	 * 2,1
+	 * Total time(ns): 4520351021
+		Total time(s): 4.520351021
+	 */
+	/*
+	 * 3,1
+		Total time(ns): 5311046316
+		Total time(s): 5.311046316
+	 * 
+	 * 3,2
+	 * 
+	 * 
+		Total time(ns): 12354283427
+		Total time(s): 12.354283427
+	 */
+	
+	/*
+	@implementation("nimfa_lsnmf")
+	@implementation("nimfa_bd")
+	@implementation("nimfa_bmf")
+	@implementation("nimfa_icm")
+	@implementation("nimfa_lfnmf")
+	@implementation("nimfa_nsnmf")
+	@implementation("nimfa_pmf")
+	@implementation("nimfa_psmf")
+	@implementation("nimfa_snmf")
+	@implementation("nimfa_snmnmf")
+	@implementation("nimfa_pmfcc")
+	*/
+	
 	
 	public static void main(String [] args) {
-		/*
-		@implementation("nimfa_lsnmf")
-		@implementation("nimfa_bd")
-		@implementation("nimfa_bmf")
-		@implementation("nimfa_icm")
-		@implementation("nimfa_lfnmf")
-		@implementation("nimfa_nsnmf")
-		@implementation("nimfa_pmf")
-		@implementation("nimfa_psmf")
-		@implementation("nimfa_snmf")
-		@implementation("nimfa_snmnmf")
-		@implementation("nimfa_pmfcc")
-		*/
-		String [] names = {"nimfa_lsnmf"};//,"nimfa_icm","nimfa_lsnmf"};
-		int [] ranks = {1,2,3,4,5};
 		
-		/* 1,1
-		 * Total time(ns): 2329747899
-			Total time(s): 2.329747899
-		 * 
-		 */
-		/*
-		 * 2,1
-		 * Total time(ns): 4520351021
-			Total time(s): 4.520351021
-		 */
-		/*
-		 * 3,1
-			Total time(ns): 5311046316
-			Total time(s): 5.311046316
-		 * 
-		 * 3,2
-		 * 
-		 * 
-			Total time(ns): 12354283427
-			Total time(s): 12.354283427
-		 */
+		String [] names = {"nimfa_nmf"};//,"nimfa_icm","nimfa_lsnmf"};
+		int [] ranks = {1};
+		
+		
 		Long start = System.nanoTime();
-		testNmf(names,ranks);
+		
+		String func = "compare";
+		testNmf(names,ranks,func);
 
 		Long end = System.nanoTime();
 		
@@ -78,120 +86,159 @@ public class Driver {
 		double seconds = (double)elapsedTime / 1000000000.0;
 		System.out.println("Total time(ns): " + (elapsedTime));
 		System.out.println("Total time(s): " + seconds);
-		//testPython();
-		//try {
-		//testMail1();
-		//} catch(Exception e) {
-		//	e.printStackTrace();
-		//}
 		
 	}
 	
 	
 	
 	
-	public static void testNmf(String [] names,int [] ranks) {
+	public static void testNmf(String [] names,int [] ranks,String func) {
 		System.out.println("in test nmf");
 		
 		//String [] names = {"nimfa_lsnmf","nimfa_nmf"};
 		
-		for(int i=0;i<names.length;i++) {
+		
+		
+		if(func.equals("compare")) {
 			
-			String name = names[i];
+			
+			System.out.println("Processing compare");
+			
+			Driver.py_filename = "/nmf-compare.py";
 
-			System.out.println("--------------");
-			System.out.println("Name: " + name);
-			System.out.println("--------------\n");
+			Nmf nmf = getNmfByName(names[0]);
 			
-			Nmf nmf = getNmfByName(name);
-
+			NmfConfig nmfConfig = new NmfConfig();
+			nmfConfig.setRank(ranks[0]);
 			
+			String [] matrix_types = {"h","w"};
 			
-			double[] rawMatrix = {
-					 0, 0, 0, 0, 0,
-					 0, 1, 1, 1, 0,
-					 0, 1, 1, 1, 0,
-					 0, 1, 1, 1, 0,
-					 0, 0, 0, 0, 0
-				};
-
-			double[] rawMatrix2 = {
-					 0, 0, 0, 0, 0, 0, 0,
-					 0, 1, 1, 1, 1, 1, 0,
-					 0, 1, 1, 1, 1, 1, 0,
-					 0, 1, 1, 1, 1, 1, 0,
-					 0, 1, 1, 1, 1, 1, 0,
-					 0, 1, 1, 1, 1, 1, 0,
-					 0, 0, 0, 0, 0, 0, 0
-				};
-			
-			
-			for(int j=0;j<ranks.length;j++) {
-
-				int rank = ranks[j];
-				System.out.println("******");
-				System.out.println("Rank: " + rank);
-				System.out.println("******\n");
-				
-				
-				
-				NmfConfig nmfConfig = new NmfConfig();
-				nmfConfig.setRank(rank);
-				
-				DenseMatrix denseMatrix = new DenseMatrix(5, 5, rawMatrix);
-				
-				MatrixWrapper matrix = new MatrixWrapper("test-nmf-matrix", denseMatrix);
-
-				NmfResult result = nmf.run(matrix, nmfConfig,name);
-				
-				try {
+			for(int i=0;i<ranks.length;i++) {
+				for(int j=0;j<matrix_types.length;j++) {
 					
-					String wTable = getTableFromMatrix(result.getW());
-					String hTable = getTableFromMatrix(result.getH());
-					String product = getTableFromMatrix(result.getProduct());
-
-					System.out.println("Getting W");
-					//System.out.println(result.getW());
-					System.out.println("wTable: " + wTable);
+					System.out.println("Rank: " + ranks[i] + " Matrix type: " + matrix_types[j]);
 					
-					/*
+					int rank = ranks[i];
+					String matrix_type = matrix_types[j];
+					
+					NmfResult result = nmf.run_compare(Integer.toString(rank),matrix_type,names);
+						
+					System.out.println("End Rank: " + ranks[i] + " Matrix type: " + matrix_types[j]);
+					
+				}
+			}
+			
+			
+		} else {
+			
+			for(int i=0;i<names.length;i++) {
+				
+				String name = names[i];
+
+				System.out.println("--------------");
+				System.out.println("Name: " + name);
+				System.out.println("--------------\n");
+				
+				Nmf nmf = getNmfByName(name);
+
+				
+				
+				double[] rawMatrix = {
+						 0, 0, 0, 0, 0,
+						 0, 1, 1, 1, 0,
+						 0, 1, 1, 1, 0,
+						 0, 1, 1, 1, 0,
+						 0, 0, 0, 0, 0
+					};
+
+				double[] rawMatrix2 = {
+						 0, 0, 0, 0, 0, 0, 0,
+						 0, 1, 1, 1, 1, 1, 0,
+						 0, 1, 1, 1, 1, 1, 0,
+						 0, 1, 1, 1, 1, 1, 0,
+						 0, 1, 1, 1, 1, 1, 0,
+						 0, 1, 1, 1, 1, 1, 0,
+						 0, 0, 0, 0, 0, 0, 0
+					};
+				
+				
+				for(int j=0;j<ranks.length;j++) {
+
+					int rank = ranks[j];
+					System.out.println("******");
+					System.out.println("Rank: " + rank);
+					System.out.println("******\n");
+					
+					
+					
+					NmfConfig nmfConfig = new NmfConfig();
+					nmfConfig.setRank(rank);
+					
+					DenseMatrix denseMatrix = new DenseMatrix(5, 5, rawMatrix);
+					
+					MatrixWrapper matrix = new MatrixWrapper("test-nmf-matrix", denseMatrix);
+
+					
+					
+						
+					Driver.py_filename = "/nmf-wrapper.py";
+					
+					NmfResult result = nmf.run_factorize(matrix, nmfConfig, name, func);
+					
 					try {
 						
-						DenseMatrix64F dMatrix = result.getW().getDenseMatrix().asEjmlMatrix();
+						String wTable = getTableFromMatrix(result.getW());
+						String hTable = getTableFromMatrix(result.getH());
+						String product = getTableFromMatrix(result.getProduct());
 
-						double[] data = dMatrix.getData();
-						int numCols = dMatrix.getNumCols();
-						for(int k=0;k<data.length;k++) {
-							System.out.println(data[k]);
-						}
+						System.out.println("Getting W");
+						//System.out.println(result.getW());
+						System.out.println("wTable: " + wTable);
+						
+							
+						//try {
+							
+						//	DenseMatrix64F dMatrix = result.getW().getDenseMatrix().asEjmlMatrix();
+
+						//	double[] data = dMatrix.getData();
+						//	int numCols = dMatrix.getNumCols();
+						//	for(int k=0;k<data.length;k++) {
+						//		System.out.println(data[k]);
+						//	}
+							
+						//} catch(Exception e) {
+						//	e.printStackTrace();
+						//}
+						
+						
+						System.out.println("Getting W");
+						//System.out.println(result.getW());
+						System.out.println("wTable: " + wTable);
+						//System.out.println("hTable: " + hTable);
+						//System.out.println("product: " + product);
 						
 					} catch(Exception e) {
 						e.printStackTrace();
 					}
-					*/
+						
+						
+					System.out.println("******");
+					System.out.println("End Rank: " + rank);
+					System.out.println("******\n");
 					
-					System.out.println("Getting W");
-					//System.out.println(result.getW());
-					System.out.println("wTable: " + wTable);
-					//System.out.println("hTable: " + hTable);
-					//System.out.println("product: " + product);
-					
-				} catch(Exception e) {
-					e.printStackTrace();
 				}
+					
+
+				System.out.println("--------------");
+				System.out.println("End Name: " + name);
+				System.out.println("--------------\n");
 				
+			}
 				
-				System.out.println("******");
-				System.out.println("End Rank: " + rank);
-				System.out.println("******\n");
+
+				
 			}
 			
-
-			System.out.println("--------------");
-			System.out.println("End Name: " + name);
-			System.out.println("--------------\n");
-			
-		}
 		
 	}
 	
@@ -254,9 +301,15 @@ public class Driver {
 
 		return new NmfPython(impl);
 		
-		//return null;
 	}
-	//in service
+	
+	
+}
+
+
+
+
+//in service
 	/*
 	 public Nmf getNmfByName(String name) {
 		name = name.toLowerCase();
@@ -275,35 +328,58 @@ public class Driver {
 		throw new UnsupportedOperationException("No NMF implementation found");
 	}
 	 */
-	
-	//in main controller
-	/*
-	@RequestMapping(value = {"/test/nmf"}, method = RequestMethod.GET)
-	public String testNmf(@RequestParam(value="name") String name)
-	throws MatrixException {
 
-		Nmf nmf = nmfService.getNmfByName(name);
+/*
 
-		NmfConfig nmfConfig = new NmfConfig() {
-			public int getRank() { return 1; }
-		};
-
-		double[] rawMatrix = {
-			 0, 0, 0, 0, 0,
-			 0, 1, 1, 1, 0,
-			 0, 1, 1, 1, 0,
-			 0, 1, 1, 1, 0,
-			 0, 0, 0, 0, 0
-		};
-
-		DenseMatrix denseMatrix = new DenseMatrix(5, 5, rawMatrix);
-		MatrixWrapper matrix = new MatrixWrapper("test-nmf-matrix", denseMatrix);
-
-		NmfResult result = nmf.run(matrix, nmfConfig);
-
-		return (getTableFromMatrix(result.getW()) +
-		        getTableFromMatrix(result.getH()) +
-		        getTableFromMatrix(result.getProduct()));
+for(int i=0;i<names.length;i++) {
+	for(int j=i;j<names.length;j++) {
+		System.out.println("comparing name: " + i + " to name: " + j);
 	}
-	*/
 }
+
+String [] matrix_types = {"h","w"};
+
+for(int i=0;i<matrix_types.length;i++) {
+	String matrix1_filename = "";
+	String matrix2_filename = "";
+	matrix1_filename = "MAT-nmf-python" + "-" + matrix_types[i] + "-" + names[0];//nimfa_nmf";
+	matrix2_filename = "MAT-nmf-python" + "-" + matrix_types[i] + "-" + names[1];//nimfa_icm";
+	
+	NmfResult result = nmf.run_compare(matrix1_filename, matrix2_filename,matrix_types[i],names[0]);
+	
+	
+}
+
+*/
+
+
+//in main controller
+/*
+@RequestMapping(value = {"/test/nmf"}, method = RequestMethod.GET)
+public String testNmf(@RequestParam(value="name") String name)
+throws MatrixException {
+
+	Nmf nmf = nmfService.getNmfByName(name);
+
+	NmfConfig nmfConfig = new NmfConfig() {
+		public int getRank() { return 1; }
+	};
+
+	double[] rawMatrix = {
+		 0, 0, 0, 0, 0,
+		 0, 1, 1, 1, 0,
+		 0, 1, 1, 1, 0,
+		 0, 1, 1, 1, 0,
+		 0, 0, 0, 0, 0
+	};
+
+	DenseMatrix denseMatrix = new DenseMatrix(5, 5, rawMatrix);
+	MatrixWrapper matrix = new MatrixWrapper("test-nmf-matrix", denseMatrix);
+
+	NmfResult result = nmf.run(matrix, nmfConfig);
+
+	return (getTableFromMatrix(result.getW()) +
+	        getTableFromMatrix(result.getH()) +
+	        getTableFromMatrix(result.getProduct()));
+}
+*/

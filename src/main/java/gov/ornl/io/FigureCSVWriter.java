@@ -13,7 +13,7 @@ public class FigureCSVWriter {
 
 
 	
-	
+	/*
 	public static void main(String [] args) {
 		
 		String filePath = "src/main/resources/static/data/output.csv";
@@ -46,7 +46,7 @@ public class FigureCSVWriter {
 		}
 		
 	}
-	
+	*/
 	
 	
 	public static String textToBeWritten(int sMax, double [] comparison_array) {

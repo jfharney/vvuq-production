@@ -7,5 +7,10 @@ import gov.ornl.vvuq.matrix.MatrixWrapper;
 
 
 public interface Nmf {
-	NmfResult run(MatrixWrapper matrix, NmfConfig config, String type);
+	NmfResult run_factorize(MatrixWrapper matrix, NmfConfig config, String type, String func);
+
+	//NmfResult run_compare(String matrix1_filename,String matrix2_filename,String matrix_type,String type);
+	
+	//input: rank, two matrix filename to calculated, and the matrix type (w,h,etc)
+	NmfResult run_compare(String rank,String matrix_type,String [] arr);
 }
